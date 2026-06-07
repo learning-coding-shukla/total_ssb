@@ -10,20 +10,20 @@ function Navbar() {
   return (
     <nav className="bg-slate-950 text-white shadow-lg sticky top-0 z-50">
 
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
 
         {/* Logo */}
 
    <Link to="/">
-  <div className="rounded-full bg-white p-1 shadow-lg">
+  <div className="rounded-full bg-white p-2 shadow-lg">
     <img
       src={logo}
       alt="TOTAL_SSB Logo"
       className="
-        h-14
-        w-14
-        md:h-18
-        md:w-18
+        h-10
+        w-10
+        md:h-14
+        md:w-12
         rounded-full
         object-cover
       "
