@@ -1,118 +1,117 @@
+// import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Army from "./pages/Army";
+import Navy from "./pages/Navy";
+import AirForce from "./pages/AirForce";
+import NDA from "./pages/NDA";
+import History from "./pages/History";
+import Psychology from "./pages/Psychology";
+import TAT from "./pages/TAT";
+import PPDT from "./pages/PPDT";
+import WAT from "./pages/WAT";
+import SRT from "./pages/SRT";
+import Lecturette from "./pages/Lecturette";
+import Interview from "./pages/Interview";
+import Knowledge from "./pages/Knowledge";
+import Forces from "./pages/Forces";
+import OIR from "./pages/OIR";
+import Kargil from "./pages/Kargil";
+import IMA from "./pages/IMA";
+import INA from "./pages/INA";
+import AFA from "./pages/AFA";
+import OTA from "./pages/OTA";
+import War1971 from "./pages/War1971";
+import War1965 from "./pages/War1965";
+import War1947 from "./pages/War1947";
+import Operations from "./pages/Operations";
+import Trident from "./pages/Trident";
+import Python from "./pages/Python";
+import Meghdoot from "./pages/Meghdoot";
+import Cactus from "./pages/Cactus";
+import Vijay from "./pages/Vijay";
+import Sindoor from "./pages/Sindoor";
+import ArmyCommands from "./pages/ArmyCommands";
+import ParaSF from "./pages/ParaSF";
+import PVC from "./pages/PVC";
+import ArmyChiefs from "./pages/ArmyChiefs";
+import ArmyRegiments from "./pages/ArmyRegiments";
+import ArmyWeapons from "./pages/ArmyWeapons";
+import NavyCommands from "./pages/NavyCommands";
+import MARCOS from "./pages/MARCOS";
+import ArmyHistory from "./pages/ArmyHistory";
+import ArmyCorps from "./pages/ArmyCorps";
+import ArmyQuiz from "./pages/ArmyQuiz";
+import NavalFleets from "./pages/NavalFleets";
+import AirForceCommands from "./pages/AirForceCommands";
+import Aircraft from "./pages/Aircraft";
+import Garud from "./pages/Garud";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div className="min-h-screen bg-slate-100">
+    <BrowserRouter>
+      <Navbar />
 
-      {/* Navbar */}
-      <nav className="bg-slate-950 text-white px-8 py-4 flex justify-between items-center">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/oir" element={<OIR />} />
+        <Route path="/army" element={<Army />} />
+        <Route path="/nda" element={<NDA />} />
+        <Route path="/ima" element={<IMA />} />
+        <Route path="/ina" element={<INA />} />
+        <Route path="/afa" element={<AFA />} />
+        <Route path="/ota" element={<OTA />} />
+        <Route path="/kargil" element={<Kargil />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/war1971" element={<War1971 />} />
+        <Route path="/war1965" element={<War1965 />} />
+        <Route path="/war1947" element={<War1947 />} />
 
-        <h1 className="text-3xl font-bold">
-          TOTAL_SSB
-        </h1>
+        <Route path="/psychology" element={<Psychology />} />
+        <Route path="/tat" element={<TAT />} />
+        <Route path="/ppdt" element={<PPDT />} />
+        <Route path="/wat" element={<WAT />} />
+        <Route path="/srt" element={<SRT />} />
+        <Route path="/forces" element={<Forces />} />
 
-        <div className="space-x-6">
-          <a href="#">Home</a>
-          <a href="#">Army</a>
-          <a href="#">Navy</a>
-          <a href="#">Air Force</a>
-          <a href="#">Psychology</a>
-          <a href="#">Resources</a>
-        </div>
+        <Route path="/knowledge" element={<Knowledge />} />
 
-      </nav>
+        <Route path="/lecturette" element={<Lecturette />} />
 
-      {/* Hero Section */}
-      <section className="text-center py-24">
+        <Route path="/interview" element={<Interview />} />
+        <Route path="/operations" element={<Operations />} />
+        <Route path="/trident" element={<Trident />} />
+        <Route path="/python" element={<Python />} />
+        <Route path="/meghdoot" element={<Meghdoot />} />
+        <Route path="/cactus" element={<Cactus />} />
+        <Route path="/vijay" element={<Vijay />} />
+        <Route path="/sindoor" element={<Sindoor />} />
+        <Route path="/parasf" element={<ParaSF />} />
+        <Route path="/army-commands" element={<ArmyCommands />} />
+        <Route path="/pvc" element={<PVC />} />
+        <Route path="/army-chiefs" element={<ArmyChiefs />} />
+        <Route path="/army-regiments" element={<ArmyRegiments />} />
+        <Route path="/army-weapons" element={<ArmyWeapons />} />
+        <Route path="/army-history" element={<ArmyHistory />} />
+        <Route path="/army-corps" element={<ArmyCorps />} />
+        <Route path="/army-quiz" element={<ArmyQuiz />} />
+        <Route path="/airforce" element={<AirForce />} />
+        <Route path="/navy" element={<Navy />} />
+        <Route path="/navy-commands" element={<NavyCommands />} />
+        <Route path="/marcos" element={<MARCOS />} />
+        <Route path="/naval-fleets" element={<NavalFleets />} />
+        <Route path="/airforce-commands" element={<AirForceCommands />} />
+        <Route path="/aircraft" element={<Aircraft />} />
+        <Route path="/garud" element={<Garud />} />
 
-        <h1 className="text-7xl font-bold text-slate-900">
-          TOTAL_SSB
-        </h1>
-
-        <p className="text-2xl mt-6 text-slate-700">
-          India's Free Defence & SSB Preparation Platform
-        </p>
-
-        <button className="mt-8 bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg">
-          Start Preparation
-        </button>
-
-      </section>
-
-      {/* Statistics */}
-
-      <section className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 px-6">
-
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-4xl font-bold text-green-600">
-            1000+
-          </h2>
-          <p>WAT Words</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-4xl font-bold text-blue-600">
-            300+
-          </h2>
-          <p>SRT Situations</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-4xl font-bold text-red-600">
-            150+
-          </h2>
-          <p>TAT Images</p>
-        </div>
-
-        <div className="bg-white p-6 rounded-xl shadow">
-          <h2 className="text-4xl font-bold text-purple-600">
-            50+
-          </h2>
-          <p>PPDT Images</p>
-        </div>
-
-      </section>
-
-      {/* Services */}
-
-      <section className="max-w-6xl mx-auto py-20 px-6">
-
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Preparation Modules
-        </h2>
-
-        <div className="grid md:grid-cols-3 gap-8">
-
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-2xl font-bold">
-              TAT Practice
-            </h3>
-            <p className="mt-4">
-              Practice with real TAT pictures.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-2xl font-bold">
-              WAT Practice
-            </h3>
-            <p className="mt-4">
-              Improve reaction speed and thinking.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow">
-            <h3 className="text-2xl font-bold">
-              SRT Practice
-            </h3>
-            <p className="mt-4">
-              Build officer-like responses.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-    </div>
+      </Routes>
+      <Footer />
+     
+    </BrowserRouter>
   );
 }
 
