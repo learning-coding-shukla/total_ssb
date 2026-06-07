@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,12 +14,22 @@ function Navbar() {
 
         {/* Logo */}
 
-        <Link
-          to="/"
-          className="text-2xl md:text-3xl font-bold text-orange-400"
-        >
-          TOTAL_SSB 🇮🇳
-        </Link>
+   <Link to="/">
+  <div className="rounded-full bg-white p-1 shadow-lg">
+    <img
+      src={logo}
+      alt="TOTAL_SSB Logo"
+      className="
+        h-14
+        w-14
+        md:h-18
+        md:w-18
+        rounded-full
+        object-cover
+      "
+    />
+  </div>
+</Link>
 
         {/* Desktop Menu */}
 

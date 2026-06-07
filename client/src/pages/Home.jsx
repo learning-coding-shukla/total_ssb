@@ -15,7 +15,7 @@ function Home() {
   <div className="text-center px-4 max-w-5xl">
 
     <h1 className="text-5xl md:text-7xl font-bold mb-6">
-      TOTAL_SSB
+      total_ssb
     </h1>
 
     <p className="text-xl md:text-2xl mb-4">
