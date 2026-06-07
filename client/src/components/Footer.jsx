@@ -42,6 +42,14 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-pink-400 ml-1"
               >
+                @itsdivyanshushukla761
+              </a>
+               <a
+                href="https://www.instagram.com/total_ssb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-400 ml-1"
+              >
                 @total_ssb
               </a>
             </p>
