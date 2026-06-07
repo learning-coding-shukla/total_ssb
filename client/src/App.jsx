@@ -50,6 +50,8 @@ import AirForceCommands from "./pages/AirForceCommands";
 import Aircraft from "./pages/Aircraft";
 import Garud from "./pages/Garud";
 import Footer from "./components/Footer";
+import InterviewQuestions from "./pages/InterviewQuestions";
+import GDTopics from "./pages/GDTopics";
 
 function App() {
   return (
@@ -107,10 +109,10 @@ function App() {
         <Route path="/airforce-commands" element={<AirForceCommands />} />
         <Route path="/aircraft" element={<Aircraft />} />
         <Route path="/garud" element={<Garud />} />
-
+        <Route path="/interview-questions" element={<InterviewQuestions />} />
+        <Route path="/gd-topics" element={<GDTopics />} />
       </Routes>
       <Footer />
-     
     </BrowserRouter>
   );
 }
