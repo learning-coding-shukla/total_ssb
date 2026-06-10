@@ -9,17 +9,15 @@ function Navbar() {
 
   return (
     <nav className="bg-slate-950 text-white shadow-lg sticky top-0 z-50">
-
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-
         {/* Logo */}
 
-   <Link to="/">
-  <div className="rounded-full bg-white p-2 shadow-lg">
-    <img
-      src={logo}
-      alt="TOTAL_SSB Logo"
-      className="
+        <Link to="/">
+          <div className="rounded-full bg-white p-2 shadow-lg">
+            <img
+              src={logo}
+              alt="TOTAL_SSB Logo"
+              className="
         h-10
         w-10
         md:h-14
@@ -27,14 +25,13 @@ function Navbar() {
         rounded-full
         object-cover
       "
-    />
-  </div>
-</Link>
+            />
+          </div>
+        </Link>
 
         {/* Desktop Menu */}
 
         <div className="hidden md:flex items-center space-x-6">
-
           <Link to="/" className="hover:text-green-400">
             Home
           </Link>
@@ -62,7 +59,6 @@ function Navbar() {
           <Link to="/operations" className="hover:text-green-400">
             ⚔️ Operations
           </Link>
-
         </div>
 
         {/* Mobile Hamburger */}
@@ -73,22 +69,14 @@ function Navbar() {
         >
           ☰
         </button>
-
       </div>
 
       {/* Mobile Menu */}
 
       {menuOpen && (
-
         <div className="md:hidden bg-slate-900 border-t border-slate-700">
-
           <div className="flex flex-col p-4 space-y-4">
-
-            <Link
-              to="/"
-              onClick={closeMenu}
-              className="hover:text-green-400"
-            >
+            <Link to="/" onClick={closeMenu} className="hover:text-green-400">
               Home
             </Link>
 
@@ -139,13 +127,12 @@ function Navbar() {
             >
               ⚔️ Operations
             </Link>
-
+            <Link to="/dashboard" className="text-white">
+              Dashboard
+            </Link>
           </div>
-
         </div>
-
       )}
-
     </nav>
   );
 }

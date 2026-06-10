@@ -2,6 +2,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Dashboard from "./pages/Dashboard";
 
 import Home from "./pages/Home";
 import Army from "./pages/Army";
@@ -12,8 +13,7 @@ import History from "./pages/History";
 import Psychology from "./pages/Psychology";
 import TAT from "./pages/TAT";
 import PPDT from "./pages/PPDT";
-import WAT from "./pages/WAT";
-import SRT from "./pages/SRT";
+// import SRT from "./pages/SRT";
 import Lecturette from "./pages/Lecturette";
 import Interview from "./pages/Interview";
 import Knowledge from "./pages/Knowledge";
@@ -52,7 +52,16 @@ import Garud from "./pages/Garud";
 import Footer from "./components/Footer";
 import InterviewQuestions from "./pages/InterviewQuestions";
 import GDTopics from "./pages/GDTopics";
-
+import WATHome from "./pages/WATHome";
+import WATInstructions from "./pages/WATInstructions";
+import WATTest from "./pages/WATTest";
+import WATResult from "./pages/WATResult";
+import SRTHome from "./pages/SRTHome";
+import SRTInstructions from "./pages/SRTInstructions";
+import SRTPracticeMode from "./pages/SRTPracticeMode";
+import SRTRealMode from "./pages/SRTRealMode";
+import SRTResult from "./pages/SRTResult";
+import TATHome from "./pages/TATHome";
 function App() {
   return (
     <BrowserRouter>
@@ -72,12 +81,12 @@ function App() {
         <Route path="/war1971" element={<War1971 />} />
         <Route path="/war1965" element={<War1965 />} />
         <Route path="/war1947" element={<War1947 />} />
-
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/psychology" element={<Psychology />} />
-        <Route path="/tat" element={<TAT />} />
+        <Route path="/tat" element={<TATHome />} />
+        <Route path="/tat/test/:setId" element={<TAT />} />
         <Route path="/ppdt" element={<PPDT />} />
-        <Route path="/wat" element={<WAT />} />
-        <Route path="/srt" element={<SRT />} />
+        {/* <Route path="/srt" element={<SRT />} /> */}
         <Route path="/forces" element={<Forces />} />
 
         <Route path="/knowledge" element={<Knowledge />} />
@@ -111,7 +120,23 @@ function App() {
         <Route path="/garud" element={<Garud />} />
         <Route path="/interview-questions" element={<InterviewQuestions />} />
         <Route path="/gd-topics" element={<GDTopics />} />
+        <Route path="/wat" element={<WATHome />} />
+
+        <Route path="/wat/instructions/:setId" element={<WATInstructions />} />
+
+        <Route path="/wat/test/:setId" element={<WATTest />} />
+
+        <Route path="/wat/result/:setId" element={<WATResult />} />
+        <Route path="/srt" element={<SRTHome />} />
+
+        <Route path="/srt/instructions/:setId" element={<SRTInstructions />} />
+
+        <Route path="/srt/practice/:setId" element={<SRTPracticeMode />} />
+
+        <Route path="/srt/real/:setId" element={<SRTRealMode />} />
+        <Route path="/srt/result/:setId" element={<SRTResult />} />
       </Routes>
+
       <Footer />
     </BrowserRouter>
   );

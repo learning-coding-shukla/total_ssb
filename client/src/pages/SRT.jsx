@@ -151,10 +151,8 @@ const srtSituations = [
 ];
 
 function SRT() {
-  const [currentIndex, setCurrentIndex] = useState(
-  Math.floor(Math.random() * srtSituations.length)
-);
-  const [timeLeft, setTimeLeft] = useState(30);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(1800);
 
   useEffect(() => {
   const timer = setInterval(() => {
