@@ -19,7 +19,7 @@ bg-center
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/hero/hero-bg.jpg')",
-            "backgroundPosition" : " 65% center",
+          backgroundPosition: " 65% center",
         }}
       >
         <div className="text-center px-4 max-w-5xl">
@@ -87,6 +87,67 @@ bg-center
         </div>
       </section>
 
+      <section className="max-w-7xl mx-auto py-20 px-6">
+        <h2 className="text-5xl font-bold text-center mb-4">
+          🎯 What You Can Practice
+        </h2>
+
+        <p className="text-center text-gray-500 mb-12">
+          Train every aspect of the SSB selection process.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "🖼 PPDT",
+              desc: "Picture Perception & Discussion Test",
+            },
+            {
+              title: "📖 TAT",
+              desc: "Thematic Apperception Test",
+            },
+            {
+              title: "⚡ WAT",
+              desc: "Word Association Test",
+            },
+            {
+              title: "📝 SRT",
+              desc: "Situation Reaction Test",
+            },
+            {
+              title: "🗣 GD",
+              desc: "Group Discussion Practice",
+            },
+            {
+              title: "🏅 OLQs",
+              desc: "Officer Like Qualities",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="
+        bg-gradient-to-br
+        from-slate-900
+        via-slate-800
+        to-slate-900
+        text-white
+        rounded-2xl
+        p-8
+        border
+        border-yellow-500/20
+        hover:scale-105
+        hover:shadow-yellow-500/20
+        transition-all
+        "
+            >
+              <h3 className="text-3xl font-bold mb-3">{item.title}</h3>
+
+              <p className="text-slate-300">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Defence Services */}
 
       <section className="max-w-7xl mx-auto py-16 px-6">
@@ -103,7 +164,20 @@ bg-center
 
           <Link
             to="/army"
-            className="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition"
+            className="
+bg-gradient-to-br
+from-slate-900
+via-slate-800
+to-slate-900
+text-white
+rounded-2xl
+shadow-xl
+p-8
+border
+border-yellow-500/20
+hover:scale-105
+transition-all
+"
           >
             <div className="flex flex-col items-center mb-6">
               <img
@@ -118,7 +192,7 @@ bg-center
               </p>
             </div>
 
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li>✓ Commands</li>
               <li>✓ Regiments</li>
               <li>✓ Para SF</li>
@@ -133,7 +207,20 @@ bg-center
 
           <Link
             to="/navy"
-            className="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition"
+            className="
+bg-gradient-to-br
+from-slate-900
+via-slate-800
+to-slate-900
+text-white
+rounded-2xl
+shadow-xl
+p-8
+border
+border-yellow-500/20
+hover:scale-105
+transition-all
+"
           >
             <div className="flex flex-col items-center mb-6">
               <img
@@ -146,7 +233,7 @@ bg-center
               <p className="text-blue-700 font-semibold mt-2">Shanno Varunah</p>
             </div>
 
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li>✓ Commands</li>
               <li>✓ Fleets</li>
               <li>✓ MARCOS</li>
@@ -161,7 +248,20 @@ bg-center
 
           <Link
             to="/airforce"
-            className="bg-white rounded-2xl shadow-lg p-8 hover:scale-105 transition"
+            className="
+bg-gradient-to-br
+from-slate-900
+via-slate-800
+to-slate-900
+text-white
+rounded-2xl
+shadow-xl
+p-8
+border
+border-yellow-500/20
+hover:scale-105
+transition-all
+"
           >
             <div className="flex flex-col items-center mb-6">
               <img
@@ -176,7 +276,7 @@ bg-center
               </p>
             </div>
 
-            <ul className="space-y-2 text-gray-700">
+            <ul className="space-y-2 text-gray-300">
               <li>✓ Commands</li>
               <li>✓ Aircraft</li>
               <li>✓ Missiles</li>
@@ -187,6 +287,27 @@ bg-center
             <div className="mt-6 text-red-600 font-bold">Explore →</div>
           </Link>
         </div>
+      </section>
+      <section
+        className="
+  py-20
+  bg-gradient-to-r
+  from-yellow-500
+  via-amber-400
+  to-yellow-500
+  text-black
+  text-center
+  "
+      >
+        <h2 className="text-5xl font-bold mb-6">🇮🇳 Officer's Creed</h2>
+
+        <p className="max-w-4xl mx-auto text-xl leading-9">
+          The SSB does not seek perfection. It seeks potential.
+          <br />
+          <br />
+          Build your character. Strengthen your mind. Lead with integrity. Serve
+          with honour.
+        </p>
       </section>
     </div>
   );
