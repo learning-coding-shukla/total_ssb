@@ -62,6 +62,8 @@ import SRTPracticeMode from "./pages/SRTPracticeMode";
 import SRTRealMode from "./pages/SRTRealMode";
 import SRTResult from "./pages/SRTResult";
 import TATHome from "./pages/TATHome";
+import OLQs from "./pages/OLQs";
+import PPDTInstructions from "./pages/PPDTInstructions";
 function App() {
   return (
     <BrowserRouter>
@@ -77,6 +79,7 @@ function App() {
         <Route path="/afa" element={<AFA />} />
         <Route path="/ota" element={<OTA />} />
         <Route path="/kargil" element={<Kargil />} />
+        <Route path="/olqs" element={<OLQs />} />
         <Route path="/history" element={<History />} />
         <Route path="/war1971" element={<War1971 />} />
         <Route path="/war1965" element={<War1965 />} />
@@ -85,7 +88,9 @@ function App() {
         <Route path="/psychology" element={<Psychology />} />
         <Route path="/tat" element={<TATHome />} />
         <Route path="/tat/test/:setId" element={<TAT />} />
-        <Route path="/ppdt" element={<PPDT />} />
+        <Route path="/ppdt" element={<PPDTInstructions />} />
+
+        <Route path="/ppdt-test" element={<PPDT />} />
         {/* <Route path="/srt" element={<SRT />} /> */}
         <Route path="/forces" element={<Forces />} />
 
