@@ -64,12 +64,21 @@ import SRTResult from "./pages/SRTResult";
 import TATHome from "./pages/TATHome";
 import OLQs from "./pages/OLQs";
 import PPDTInstructions from "./pages/PPDTInstructions";
+import GPETest from "./pages/GPETest";
+import GPEComplete from "./pages/GPEComplete";
+import GPEHome from "./pages/GPEHome";
+import GPEInstructions from "./pages/GPEInstructions";
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
       <Routes>
+        <Route path="/gpe/test/:setId" element={<GPETest />} />
+        <Route path="/gpe-complete/:setId" element={<GPEComplete />} />
+        <Route path="/gpe" element={<GPEHome />} />
+
+        <Route path="/gpe/instructions/:setId" element={<GPEInstructions />} />
         <Route path="/" element={<Home />} />
         <Route path="/oir" element={<OIR />} />
         <Route path="/army" element={<Army />} />

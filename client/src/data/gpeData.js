@@ -1,0 +1,42 @@
+export const gpeSets = [
+  {
+    id: 1,
+    title: "Tsunami Relief Operation",
+    difficult : "Hard",
+    map: "/gpe/pic1.png",
+    story: `You are a party of 10 students including 2 girls from a Medical College of City K, engaged in Tsunami Relief Operations in Village A. After Completion of job in that village at 1400 hrs, while you are moving to other villages, you are informed by a villager from Village C that his village is in a very precarious condition and has been infected by hardcore criminals and they do not allow outsiders to enter their village and earlier even the police who dared to enter the village was brutally murdered. Simultaneously a boy fell on your feet and became unconscious after telling that his Village B has a mass epidemic due to post-Tsunami waves and all relief assistance people have withdrawn from their task fearing their own lives. While you were discussing what to do, you found that your beautiful girl friends were missing, on inquiry, it is learned that the girls have been molested and kidnapped by 3 goondas of that village. A boy also cries to save his pet dog trapped in his completely damaged house. You also learn that the school building in which 1000 ladies and children of Tsunami victims were accommodated, caught fire due to an LPG cylinder burst, while you see a helicopter carrying relief materials crash-landed in a nearby paddy field. You have a jeep that has been fully submerged in the Tsunami mud during the relief operation. The Police station has got plenty of police personnel, arms, and ammunition. You have been ordered by the Principal to return to the Hostel latest by 1800 hrs.`,
+    solution: "",
+  },
+  {
+    id: 2,
+    title: "Covid Volunteering",
+     difficult : "Moderate",
+    map: "/gpe/pic2.png",
+    story: `You are a group of NCC cadets from your NCC unit Amreli who is returning back after doing Covid volunteering duties at Kheda by minibus. While passing by milestone 44 you were stopped by a person on the roadside asking for help. He told you that he is from an NGO and was out delivering food packets to Village Kotla but their van broke down, so he requests you to deliver those food packets there. While you were transferring the food packets you heard a loud noise from behind and saw a car collide with a roadside tree. You rushed to the spot and found the driver seriously injured, co-driver tells you that they overheard the plan of thieves to rob a bank in Kotla village at 1400 hrs. At the same time, a crying child comes running to you asking for help. He informed you that he has escaped from the rubber factory which has detained and kept many children whom they use for forced labor work secretly despite lockdown. While you were contemplating what to do one of your friends tells you he's not feeling well and has a high fever with coughing. The time now is 1300 hrs. You have to reach and report to your unit Commanding Officer at 1630 hrs. As a group of Brave young cadets, what will you do?`,
+    solution: "",
+  },
+  {
+    id: 3,
+    title: "College Picnic",
+     difficult : "Moderate",
+    map: "/gpe/pic3.png",
+    story: `You are a group of students (as many as you are) from Govt. Engineering college, Dagari. Your group had gone for a picnic to Kali lake by the college van. While you were planning to return to your college for Inter College Musical Night scheduled at 7:30 PM, one forest guard approached your group for help. You observed that he was bleeding and limping badly. On inquiry, he informed that he was beaten by a group of dacoits, who were planning to steal the precious idol from Siva temple around 4 PM and hand it over to smugglers hiding in Kasori Forest Reserve. The guard also informed that another group had decided to loot the passenger train between Dagri and Kanwal near the Kasori Forest Reserve rail bridge on Betwa river. The Dagri - Kanwal passenger train crosses the Betwa Bridge at about 4:30 PM. As you were contemplating you observed that a young couple who had also come for the picnic was shouting for assistance. You turned and saw that the boat in which the young couple was sitting was drowning and they were desperately screaming for help. You were still in shock and trying to keep your cool when a fisherman came running for help as his boat had broken and was drifting in the Kali lake. The time now is 3 PM. You as a group of dynamic young students, how will you handle the situation?`,
+    solution: ``,
+  },
+  {
+    id: 4,
+    title: "Model Colony Cricket Club",
+     difficult : "Moderate",
+    map: "/gpe/pic4.png",
+    story: `You are a group of students from Model Colony Cricket Club. You have come to the local stadium on bicycles to practice for the forthcoming Cricket Championship. You have got a free day today as the entire region is observing a BANDH call given by the transporters to protest against the diesel price hike. You have to be back at the Highway Hotel by 6 PM to participate in the club function, where one of the State Level Player is the Chief Guest. After the practice session, while you are having lunch at the Dhaba, you are joined by your friend's brother. He informs you that there is tension in the New Jhuggi Colony against the demolition drive started yesterday. The residents of the Jhuggi Colony are planning to stop the Paras-Karanpur passenger when it passes the MLC at 3 PM and one of the youth was to attempt self-immolation. While you were deciding what to do, you see a worried lineman entering the Dhaba. He tells you that the disgruntled employees of the electricity department have all gathered at the Chetan Park. They are planning to sabotage the Electric Substation to protest against the suspension of one of their colleagues. Meanwhile your club secretary reminds you about the purchase of new gloves and ball without which you will not be able to play tomorrow's cricket match. While you were deciding your next course of action, you see an old man rushing inside the Dhaba. He tells you that he had seen two burglars trying to break in the locker of his Master. He also tells you that the master and his family had gone to a hill station for the vacations. All the telephone lines in the area are out of order due to the support given to the Bandh call. Mobile phones are not functional in the area. Time now is 1.30 PM placed in such a situation as young dynamic students, what will you do?`,
+    solution: ``,
+  },
+  {
+    id: 5,
+    title: "Bhagu Jungle Scientists",
+     difficult : "Slightly Hard",
+    map: "/gpe/pic5.png",
+    story: `You are a group of students who have come from Bhagu, a District Headquarter in a matador to the Salia Canal rest house for a sight seeing trip. You were required to get back by 8.00 PM to participate in the annual function organised by your society. You got down at the rest house and saw a family boating in the river. Then you decided to visit the Salia Fort. When you returned to the rest house, one of your friends told you that he had forgotten the bag containing the camera in the fort. You were planning to receive the camera when you heard a shout coming from the direction of the track junction and saw a man stumbling towards you. When you rushed to him, he told you that he and his wife were scientists belonging to Rampur, a district headquarters. They had come to the Bhagu jungle on their motorcycle to carry out a research on rare birds. He further explained that two gangsters had followed them from Salia city. While they were returning back to Rampur from Bhagu jungle, the gangsters had stopped them at the track junction and took his wife as a hostage and demanded for his research papers. He tried to resist but was badly beaten up and told to get his research papers to the cave in the jungle by 6.30 PM. He also told you that they had warned him against informing the authorities. The man fell unconscious after narrating his tale. You were planning on your course of action when you heard screams from the riverside and saw a boat carrying three children drifting fast in the river towards Bhagu. As you rushed to help, you saw the parents in panic. The time now is 5.30 PM. As bold young students what will you do?`,
+    solution: ``,
+  },
+];

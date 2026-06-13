@@ -48,9 +48,6 @@ function Navbar() {
             Knowledge Hub
           </Link>
 
-          <Link to="/lecturette" className="hover:text-green-400">
-            Lecturette
-          </Link>
 
           <Link to="/interview" className="hover:text-green-400">
             Interview
@@ -59,6 +56,9 @@ function Navbar() {
           <Link to="/operations" className="hover:text-green-400">
             ⚔️ Operations
           </Link>
+          <Link to="/dashboard" className="text-white">
+              Dashboard
+            </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -104,13 +104,7 @@ function Navbar() {
               Knowledge Hub
             </Link>
 
-            <Link
-              to="/lecturette"
-              onClick={closeMenu}
-              className="hover:text-green-400"
-            >
-              Lecturette
-            </Link>
+            
 
             <Link
               to="/interview"

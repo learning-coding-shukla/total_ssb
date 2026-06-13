@@ -31,11 +31,25 @@ function Psychology() {
       path: "/srt",
     },
     {
+      title: "🎤 Lecturette Practice",
+      subtitle: "Public Speaking & Expression",
+      description:
+        "Improve confidence, knowledge, communication skills and officer-like expression through Lecturette practice.",
+      path: "/lecturette",
+    },
+    {
       title: "🗣️ GD Practice",
       subtitle: "Group Discussion Arena",
-      description:
-        "Practice the most expected SSB group discussion topics.",
+      description: "Practice the most expected SSB group discussion topics.",
       path: "/gd-topics",
+    },
+    {
+      title: "🗺️ GPE Practice",
+      subtitle: "Group Planning Exercise",
+      description:
+        "Practice real SSB GPEs with authentic maps and timer-based simulation.",
+      path: "/gpe",
+      featured: true,
     },
     {
       title: "🏅 Officer Like Qualities",
@@ -49,7 +63,6 @@ function Psychology() {
 
   return (
     <div className="max-w-7xl mx-auto p-8">
-
       {/* Hero Section */}
       <div
         className="
@@ -68,17 +81,15 @@ function Psychology() {
         shadow-2xl
       "
       >
-        <div className="absolute right-8 top-4 text-8xl opacity-10">
-          🇮🇳
-        </div>
+        <div className="absolute right-8 top-4 text-8xl opacity-10">🇮🇳</div>
 
         <h1 className="text-5xl font-bold mb-4">
           🧠 Psychology Testing Ground
         </h1>
 
         <p className="text-xl text-slate-300 max-w-3xl">
-          Every thought reveals your personality. Every reaction reflects
-          your character. Train the mindset of a future officer.
+          Every thought reveals your personality. Every reaction reflects your
+          character. Train the mindset of a future officer.
         </p>
 
         <div className="flex flex-wrap gap-3 mt-6">
@@ -102,9 +113,7 @@ function Psychology() {
 
       {/* Section Heading */}
       <div className="mb-8">
-        <h2 className="text-4xl font-bold">
-          ⚔️ Officer Development Modules
-        </h2>
+        <h2 className="text-4xl font-bold">⚔️ Officer Development Modules</h2>
 
         <p className="text-gray-500 mt-2">
           Train the qualities expected from future leaders of the Armed Forces.
@@ -113,7 +122,6 @@ function Psychology() {
 
       {/* Cards */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
         {tests.map((test) => (
           <Link
             key={test.title}
@@ -143,30 +151,17 @@ function Psychology() {
               </div>
             )}
 
-            <h3 className="text-2xl font-bold mb-2">
-              {test.title}
-            </h3>
+            <h3 className="text-2xl font-bold mb-2">{test.title}</h3>
 
-            <p className="font-semibold mb-3 opacity-90">
-              {test.subtitle}
-            </p>
+            <p className="font-semibold mb-3 opacity-90">{test.subtitle}</p>
 
-            <p
-              className={
-                test.featured
-                  ? "text-black/80"
-                  : "text-slate-300"
-              }
-            >
+            <p className={test.featured ? "text-black/80" : "text-slate-300"}>
               {test.description}
             </p>
 
-            <div className="mt-5 font-bold">
-              ➜ Enter Training
-            </div>
+            <div className="mt-5 font-bold">➜ Enter Training</div>
           </Link>
         ))}
-
       </div>
 
       {/* Quote Section */}
@@ -182,8 +177,8 @@ function Psychology() {
       "
       >
         <p className="text-xl italic">
-          "The SSB does not look for perfect candidates.
-          It looks for individuals with the potential to become officers."
+          "The SSB does not look for perfect candidates. It looks for
+          individuals with the potential to become officers."
         </p>
       </div>
 
@@ -202,15 +197,13 @@ function Psychology() {
         shadow-xl
       "
       >
-        <h2 className="text-4xl font-bold mb-4">
-          🇮🇳 Officer's Creed
-        </h2>
+        <h2 className="text-4xl font-bold mb-4">🇮🇳 Officer's Creed</h2>
 
         <p className="text-lg font-medium max-w-4xl mx-auto">
-          The SSB does not select the most talented candidate.
-          It selects the candidate with the greatest officer potential.
-          Develop your OLQs every day, and your personality will naturally
-          reflect the qualities of a leader.
+          The SSB does not select the most talented candidate. It selects the
+          candidate with the greatest officer potential. Develop your OLQs every
+          day, and your personality will naturally reflect the qualities of a
+          leader.
         </p>
       </div>
     </div>
