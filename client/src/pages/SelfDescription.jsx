@@ -8,28 +8,28 @@ const sections = [
   {
     title: "👨‍👩‍👦 Parents' Opinion",
     description:
-      "Write what your parents genuinely think about you. Mention both their appreciation of your strengths and the areas where they expect you to improve."
+      "Write what your parents genuinely think about you. Mention both their appreciation of your strengths and the areas where they expect you to improve.",
   },
   {
     title: "👨‍🏫 Teachers' / Employers' Opinion",
     description:
-      "Write what your teachers or employer genuinely think about you. Include both your strengths and the areas where they advise you to improve."
+      "Write what your teachers or employer genuinely think about you. Include both your strengths and the areas where they advise you to improve.",
   },
   {
     title: "🤝 Friends' Opinion",
     description:
-      "Write how your friends honestly describe your personality, behaviour, and qualities."
+      "Write how your friends honestly describe your personality, behaviour, and qualities.",
   },
   {
     title: "🧑 Your Opinion About Yourself",
     description:
-      "Describe yourself honestly. Mention your strengths, limitations, and overall personality."
+      "Describe yourself honestly. Mention your strengths, limitations, and overall personality.",
   },
   {
     title: "📈 Qualities You Want to Improve",
     description:
-      "Write the qualities you genuinely wish to improve and the efforts you are making to develop them."
-  }
+      "Write the qualities you genuinely wish to improve and the efforts you are making to develop them.",
+  },
 ];
 
 export default function SelfDescription() {
@@ -76,118 +76,165 @@ export default function SelfDescription() {
     setFinished(false);
   };
 
+  
+
   const download = () => {
-  const doc = new jsPDF();
+    const doc = new jsPDF("p", "mm", "a4");
 
-  // ===== Header =====
-  doc.setFillColor(15, 23, 42); // Navy Blue
-  doc.rect(0, 0, 210, 25, "F");
+    // =========================
+    // HEADER
+    // =========================
+    doc.setFillColor(10, 25, 60);
+    doc.rect(0, 0, 210, 30, "F");
 
-  doc.setTextColor(255, 255, 255);
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(22);
-  doc.text("TOTAL_SSB", 105, 12, { align: "center" });
-
-  doc.setFontSize(13);
-  doc.text("Self Description Test", 105, 20, { align: "center" });
-
-  // ===== Body =====
-  doc.setTextColor(0, 0, 0);
-  doc.setFont("helvetica", "normal");
-
-  let y = 35;
-
-  const addSection = (title, question, answer) => {
+    doc.setTextColor(255, 255, 255);
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(15);
-    doc.text(title, 15, y);
+    doc.setFontSize(24);
+    doc.text("TOTAL_SSB", 105, 13, { align: "center" });
 
-    y += 7;
+    doc.setFontSize(14);
+    doc.text("SELF DESCRIPTION TEST", 105, 22, {
+      align: "center",
+    });
 
-    doc.setFont("helvetica", "italic");
-    doc.setFontSize(11);
-    doc.text(question, 15, y);
+    doc.setTextColor(0, 0, 0);
+
+    // =========================
+    // Candidate Details
+    // =========================
+
+    let y = 42;
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+
+    doc.text("Candidate Name :", 15, y);
+    doc.line(58, y + 1, 125, y + 1);
+
+    doc.text("Date :", 145, y);
+    doc.line(160, y + 1, 195, y + 1);
+
+    y += 12;
+
+    doc.setDrawColor(150);
+    doc.line(15, y, 195, y);
+
+    y += 10;
+
+    // =========================
+    // Instructions
+    // =========================
+
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(13);
+    doc.text("Instructions", 15, y);
 
     y += 8;
 
     doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
 
-    const lines = doc.splitTextToSize(
-      answer || "No Response",
-      180
-    );
+    const instructions = [
+      "• Write your responses honestly.",
+      "• Mention both strengths and weaknesses wherever applicable.",
+      "• Use simple and natural language.",
+      "• Complete all five sections.",
+      "• Time Allowed : 15 Minutes.",
+    ];
 
-    doc.text(lines, 15, y);
+    instructions.forEach((item) => {
+      doc.text(item, 18, y);
+      y += 6;
+    });
 
-    y += lines.length * 7 + 12;
+    y += 6;
 
-    if (y > 260) {
-      doc.addPage();
-      y = 20;
-    }
-  };
+    doc.setDrawColor(170);
+    doc.line(15, y, 195, y);
 
-  addSection(
-    "1. Parents' Opinion",
-    "What do your parents think about you?"
-    
-  );
+    y += 10;
 
-  addSection(
-    "2. Teachers' Opinion",
-    "What do your teachers think about you?"
-    
-  );
+    // =========================
+    // Questions
+    // =========================
 
-  addSection(
-    "3. Friends' Opinion",
-    "What do your friends think about you?"
-    
-  );
-
-  addSection(
-    "4. Self Opinion",
-    "What do you think about yourself?"
-   
-  );
-
-  addSection(
-    "5. Future Goals & Improvements",
-    "What do you want to become in future and which qualities do you want to improve?"
-    
-  );
-
-  // ===== Footer =====
-
-  const pageCount = doc.getNumberOfPages();
-
-  for (let i = 1; i <= pageCount; i++) {
-    doc.setPage(i);
-
-    doc.setDrawColor(180);
-    doc.line(15, 287, 195, 287);
-
-    doc.setFontSize(10);
-    doc.setTextColor(120);
-
-    doc.text(
-      `Generated by TOTAL_SSB`,
-      15,
-      293
-    );
-
-    doc.text(
-      `Page ${i} of ${pageCount}`,
-      195,
-      293,
+    const questions = [
       {
-        align: "right",
-      }
-    );
-  }
+        title: "1. Parents' Opinion",
+        question: "What do your parents think about you?",
+      },
+      {
+        title: "2. Teachers' Opinion",
+        question: "What do your teachers think about you?",
+      },
+      {
+        title: "3. Friends' Opinion",
+        question: "What do your friends think about you?",
+      },
+      {
+        title: "4. Self Opinion",
+        question: "What do you think about yourself?",
+      },
+      {
+        title: "5. Future Goals & Improvements",
+        question:
+          "What do you want to become in future and which qualities do you want to improve?",
+      },
+    ];
 
-  doc.save("Self_Description_Response.pdf");
-};
+    questions.forEach((item) => {
+      if (y > 235) {
+        doc.addPage();
+        y = 20;
+      }
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text(item.title, 15, y);
+
+      y += 7;
+
+      doc.setFont("helvetica", "italic");
+      doc.setFontSize(11);
+      doc.text(item.question, 15, y);
+
+      y += 8;
+
+      // Writing Lines
+
+      for (let i = 0; i < 5; i++) {
+        doc.setDrawColor(180);
+        doc.line(15, y, 195, y);
+        y += 9;
+      }
+
+      y += 8;
+    });
+
+    // =========================
+    // Footer
+    // =========================
+
+    const pages = doc.getNumberOfPages();
+
+    for (let i = 1; i <= pages; i++) {
+      doc.setPage(i);
+
+      doc.setDrawColor(180);
+      doc.line(15, 287, 195, 287);
+
+      doc.setFontSize(10);
+      doc.setTextColor(120);
+
+      doc.text("@total_ssb", 15, 293);
+
+      doc.text(`Page ${i} of ${pages}`, 195, 293, {
+        align: "right",
+      });
+    }
+
+    doc.save("TOTAL_SSB_Self_Description_Practice_Sheet.pdf");
+  };
 
   if (finished) {
     return (
@@ -295,7 +342,7 @@ export default function SelfDescription() {
               </div>
             </div>
           </div>
-{/* 
+          {/* 
           <div className="flex justify-between mt-3 text-sm text-gray-400">
             <span>Words: {words}</span>
             <span>Characters: {responses[current].length}</span>
