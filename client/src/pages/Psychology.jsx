@@ -31,6 +31,14 @@ function Psychology() {
       path: "/srt",
     },
     {
+      title: "🧠 Self Description Test",
+      subtitle: "Self Analysis & Personality Assessment",
+      description:
+        "Practice the final psychology test exactly like the real SSB by writing your responses in your notebook.",
+      path: "/psychology/self-description",
+    },
+
+    {
       title: "🎤 Lecturette Practice",
       subtitle: "Public Speaking & Expression",
       description:

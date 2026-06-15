@@ -68,12 +68,17 @@ import GPETest from "./pages/GPETest";
 import GPEComplete from "./pages/GPEComplete";
 import GPEHome from "./pages/GPEHome";
 import GPEInstructions from "./pages/GPEInstructions";
+import SelfDescription from "./pages/SelfDescription";
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
       <Routes>
+        <Route
+          path="/psychology/self-description"
+          element={<SelfDescription />}
+        />
         <Route path="/gpe/test/:setId" element={<GPETest />} />
         <Route path="/gpe-complete/:setId" element={<GPEComplete />} />
         <Route path="/gpe" element={<GPEHome />} />
