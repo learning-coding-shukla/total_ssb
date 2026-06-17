@@ -1,18 +1,12 @@
 {
-  "dependencies": {
-    "framer-motion": "^12.40.0",
-    "jspdf": "^4.2.1",
-    "react-icons": "^5.6.0"
-  },
+  "name": "total-ssb",
+  "private": true,
+  "workspaces": [
+    "client"
+  ],
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
-  "devDependencies": {
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.7",
-    "typescript": "^5.2.2",
-    "vite": "^5.4.0"
+    "dev": "npm --prefix client run dev",
+    "build": "npm --prefix client run build",
+    "preview": "npm --prefix client run preview"
   }
 }
