@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import SDInstructions from "../components/SDInstructions";
 import SDTimer from "../components/SDTimer";
 import SDTips from "../components/SDTips";
-import jsPDF from "jspdf";
+import { jsPDF } from "jspdf";
 
 const sections = [
   {
