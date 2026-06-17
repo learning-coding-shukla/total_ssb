@@ -1,105 +1,304 @@
 import { Link } from "react-router-dom";
+
+import MilitaryHero from "../components/common/MilitaryHero";
+import MilitaryStats from "../components/common/MilitaryStats";
+import MilitarySection from "../components/common/MilitarySection";
+import MilitaryQuote from "../components/common/MilitaryQuote";
+import militaryThemes from "../components/common/MilitaryTheme";
+
 import armyImg from "../assets/army-logo.png";
 import navyImg from "../assets/navy-logo.png";
 import airforceImg from "../assets/airforce-logo.png";
 
+const theme = militaryThemes.army;
+
 function Forces() {
-  return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-5xl font-bold text-center mb-12">
-        Indian Armed Forces
-      </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Link
-          to="/army"
-          className="
-bg-white
-rounded-2xl
-shadow-lg
-p-8
-hover:scale-105
-hover:shadow-2xl
+const hero={
+
+title:"Indian Armed Forces",
+
+motto:"United • Strong • Ready",
+
+description:
+"Explore the Indian Army, Navy and Air Force through history, ranks, commands, operations, equipment and traditions.",
+
+stats:[
+
+{
+icon:"🪖",
+value:"13L+",
+label:"Personnel"
+},
+
+{
+icon:"⚔️",
+value:"3",
+label:"Services"
+},
+
+{
+icon:"⭐",
+value:"75+",
+label:"Years"
+},
+
+{
+icon:"🎖️",
+value:"17",
+label:"Commands"
+}
+
+],
+
+primaryAction:{
+label:"Explore Forces"
+},
+
+secondaryAction:{
+label:"Rank Structure"
+}
+
+};
+
+const stats=[
+
+{
+icon:"🪖",
+value:"12.5L+",
+label:"Army"
+},
+
+{
+icon:"⚓",
+value:"70K+",
+label:"Navy"
+},
+
+{
+icon:"✈️",
+value:"1.4L+",
+label:"Air Force"
+},
+
+{
+icon:"🇮🇳",
+value:"3",
+label:"Services"
+},
+
+{
+icon:"🎖️",
+value:"17",
+label:"Ranks"
+}
+
+];
+
+const forces=[
+
+{
+
+title:"Indian Army",
+
+image:armyImg,
+
+motto:"Service Before Self",
+
+description:
+"Commands, Corps, Regiments, Weapons, Operations, History and Rank Structure.",
+
+color:"green",
+
+route:"/army"
+
+},
+
+{
+
+title:"Indian Navy",
+
+image:navyImg,
+
+motto:"Sham No Varunah",
+
+description:
+"Ships, Fleets, MARCOS, Naval Aviation, Commands and Operations.",
+
+color:"blue",
+
+route:"/navy"
+
+},
+
+{
+
+title:"Indian Air Force",
+
+image:airforceImg,
+
+motto:"Touch The Sky With Glory",
+
+description:
+"Aircraft, Air Commands, Air Defence, Missiles and Operations.",
+
+color:"sky",
+
+route:"/airforce"
+
+}
+
+];
+
+return(
+
+<main className="min-h-screen bg-slate-950 text-white">
+
+<MilitaryHero
+
+theme={theme}
+
+title={hero.title}
+
+motto={hero.motto}
+
+description={hero.description}
+
+stats={hero.stats}
+
+primaryAction={hero.primaryAction}
+
+secondaryAction={hero.secondaryAction}
+
+/>
+
+<MilitaryStats
+
+theme={theme}
+
+stats={stats}
+
+/>
+
+<section className="max-w-7xl mx-auto px-6 py-20">
+
+<MilitarySection
+
+theme={theme}
+
+emoji="🛡️"
+
+title="Explore The Three Services"
+
+subtitle="Discover the history, rank structure, commands, operations and traditions of each branch of the Indian Armed Forces."
+
+/>
+
+<div className="grid lg:grid-cols-3 gap-8">
+  {forces.map((force)=>(
+
+<Link
+key={force.title}
+to={force.route}
+>
+
+<div
+className="
+group
+rounded-3xl
+overflow-hidden
+bg-white/5
+border
+border-white/10
+hover:border-yellow-400
+backdrop-blur-xl
 transition-all
-duration-300
-border-t-4
-border-green-600
+duration-500
+hover:-translate-y-3
+hover:shadow-2xl
+hover:shadow-yellow-500/20
 "
-        >
-          <div className="flex flex-col items-center mb-6">
-            <img
-              src={armyImg}
-              alt="Indian Army"
-              className="h-24 w-24 object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
-            />
+>
 
-            <h3 className="text-3xl font-bold">Indian Army</h3>
-            <p className="text-green-700 font-semibold mt-2">
-              Service Before Self
-            </p>
-          </div>
+<div className="h-52 flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
 
-          <p>Commands, Regiments, Operations, History and Equipment.</p>
-        </Link>
+<img
 
-        <Link
-          to="/navy"
-          className="
-bg-white
-rounded-2xl
-shadow-lg
-p-8
-hover:scale-105
-hover:shadow-2xl
+src={force.image}
+
+alt={force.title}
+
+className="h-32 object-contain transition duration-500 group-hover:scale-110"
+
+/>
+
+</div>
+
+<div className="p-8">
+
+<h2 className="text-3xl font-bold">
+
+{force.title}
+
+</h2>
+
+<p className="mt-3 text-yellow-400 font-semibold">
+
+{force.motto}
+
+</p>
+
+<p className="mt-6 text-slate-300 leading-8">
+
+{force.description}
+
+</p>
+
+<div
+className="
+mt-8
+inline-flex
+items-center
+gap-2
+text-yellow-400
+font-semibold
+group-hover:gap-4
 transition-all
-duration-300
-border-blue-600"
-        >
-          <div className="flex flex-col items-center mb-6">
-            <img
-              src={navyImg}
-              alt="Indian Navy"
-              className="h-24 w-24 object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
-            />
+"
+>
 
-            <h3 className="text-3xl font-bold">Indian Navy</h3>
-            <p className="text-blue-700 font-semibold mt-2">Shanno Varunah</p>
-          </div>
+Explore →
 
-          <p>Fleets, MARCOS, Ships, Naval Aviation and Operations.</p>
-        </Link>
+</div>
 
-        <Link
-          to="/airforce"
-          className="
-bg-white
-rounded-2xl
-shadow-lg
-p-8
-hover:scale-105
-hover:shadow-2xl
-transition-all
-duration-300
-border-red-600"
-        >
-          <div className="flex flex-col items-center mb-6">
-            <img
-              src={airforceImg}
-              alt="Indian Air Force"
-              className="h-24 w-24 object-contain mb-3 transition-transform duration-300 group-hover:scale-110"
-            />
+</div>
 
-            <h3 className="text-3xl font-bold">Indian Air Force</h3>
-            <p className="text-red-700 font-semibold mt-2">
-              Touch The Sky With Glory
-            </p>
-          </div>
+</div>
 
-          <p>Aircraft, Commands, Air Operations and Air Defence.</p>
-        </Link>
-      </div>
-    </div>
-  );
+</Link>
+
+))}
+</div>
+</section>
+
+<MilitaryQuote
+
+theme={theme}
+
+emoji="🇮🇳"
+
+quote="It is not the weapon, but the warrior behind it that wins the battle."
+
+author="Indian Armed Forces"
+
+designation="Nation First • Always First"
+
+/>
+
+</main>
+
+);
+
 }
 
 export default Forces;

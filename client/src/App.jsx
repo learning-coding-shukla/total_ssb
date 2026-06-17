@@ -69,12 +69,20 @@ import GPEComplete from "./pages/GPEComplete";
 import GPEHome from "./pages/GPEHome";
 import GPEInstructions from "./pages/GPEInstructions";
 import SelfDescription from "./pages/SelfDescription";
+import ArmyRankStructure from "./pages/ArmyRankStructure";
+import NavyRankStructure from "./pages/NavyRankStructure";
+import AirForceRankStructure from "./pages/AirForceRankStructure";
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
       <Routes>
+        <Route path="/army/ranks" element={<ArmyRankStructure />} />
+
+        <Route path="/navy/ranks" element={<NavyRankStructure />} />
+
+        <Route path="/airforce/ranks" element={<AirForceRankStructure />} />
         <Route
           path="/psychology/self-description"
           element={<SelfDescription />}

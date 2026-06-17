@@ -1,46 +1,116 @@
 import { Link } from "react-router-dom";
+import MilitaryLandingLayout from "../components/common/MilitaryLandingLayout";
+import militaryThemes from "../components/common/MilitaryTheme";
 
-function AirForce() {
+const theme = militaryThemes.airforce;
+
+const AirForce = () => {
+  const hero = {
+    title: "Indian Air Force",
+    motto: "Touch the Sky with Glory",
+    description:
+      "The Indian Air Force protects the nation's skies through air superiority, strategic airlift, reconnaissance and precision strike capabilities. Explore aircraft, commands, ranks and operations.",
+
+    stats: [
+      { icon: "✈️", value: "17", label: "Ranks" },
+      { icon: "🛩️", value: "1700+", label: "Aircraft" },
+      { icon: "🚁", value: "600+", label: "Helicopters" },
+      { icon: "👨‍✈️", value: "1.4L+", label: "Personnel" },
+    ],
+
+    primaryAction: {
+      label: "Explore Ranks",
+    },
+
+    secondaryAction: {
+      label: "Air Force History",
+    },
+  };
+
+  const stats = [
+    {
+      icon: "✈️",
+      value: "17",
+      label: "Ranks",
+    },
+    {
+      icon: "🛩️",
+      value: "1700+",
+      label: "Aircraft",
+    },
+    {
+      icon: "🚁",
+      value: "600+",
+      label: "Helicopters",
+    },
+    {
+      icon: "🚀",
+      value: "40+",
+      label: "Air Bases",
+    },
+    {
+      icon: "👨‍✈️",
+      value: "1.4L+",
+      label: "Personnel",
+    },
+  ];
+
+  const sections = [
+    {
+      emoji: "📜",
+      title: "Air Force History",
+      description: "Explore the history and evolution of the Indian Air Force.",
+      color: "sky",
+    },
+    {
+      emoji: "✈️",
+      title: "Rank Structure",
+      description: "Ranks, insignias, promotions and appointments in the Indian Air Force.",
+      color: "blue",
+    },
+    {
+      emoji: "🛩️",
+      title: "Aircraft Fleet",
+      description: "Fighter aircraft, transport aircraft and trainers of the IAF.",
+      color: "purple",
+    },
+    {
+      emoji: "🚁",
+      title: "Helicopters",
+      description: "Attack, utility and heavy-lift helicopters used by the IAF.",
+      color: "green",
+    },
+    {
+      emoji: "🚀",
+      title: "Missiles & Defence",
+      description: "Integrated air defence systems and missile capabilities.",
+      color: "red",
+    },
+    {
+      emoji: "🌍",
+      title: "Air Commands",
+      description: "Operational and maintenance commands across India.",
+      color: "yellow",
+    },
+  ];
+
+  const quote = {
+    emoji: "✈️",
+    quote:
+      "Touch the Sky with Glory.",
+    author: "Indian Air Force",
+    designation: "Official Motto",
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4">
-        ✈ Indian Air Force
-      </h1>
-
-      <p className="text-center text-xl text-gray-600 mb-12">
-        Touch The Sky With Glory
-      </p>
-
-      <div className="grid md:grid-cols-3 gap-8">
-        <Link
-          to="/airforce-commands"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h2 className="text-2xl font-bold">🏢 Commands</h2>
-
-          <p className="mt-4">All Air Force Commands and Headquarters.</p>
-        </Link>
-
-        <Link
-          to="/aircraft"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h2 className="text-2xl font-bold">✈ Aircraft</h2>
-
-          <p className="mt-4">Fighters, Transport and Helicopters.</p>
-        </Link>
-
-        <Link
-          to="/garud"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h2 className="text-2xl font-bold">🔥 Garud Commandos</h2>
-
-          <p className="mt-4">Special Forces of the Indian Air Force.</p>
-        </Link>
-      </div>
-    </div>
+    <MilitaryLandingLayout
+      theme={theme}
+      hero={hero}
+      stats={stats}
+      sections={sections}
+      quote={quote}
+    />
   );
-}
+};
 
 export default AirForce;

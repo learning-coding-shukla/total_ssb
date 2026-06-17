@@ -1,141 +1,153 @@
 import { Link } from "react-router-dom";
+import MilitaryLandingLayout from "../components/common/MilitaryLandingLayout";
+import militaryThemes from "../components/common/MilitaryTheme";
 
-function Army() {
-  return (
-    <div className="max-w-7xl mx-auto p-8">
+const theme = militaryThemes.army;
 
-      <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-4">
-        🪖 Indian Army
-      </h1>
+const Army = () => {
 
-      <p className="text-center text-gray-600 text-xl mb-12">
-        Service Before Self
-      </p>
+const hero = {
 
-      <div className="grid md:grid-cols-3 gap-8">
+title:"Indian Army",
 
-        <Link
-          to="/army-history"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            📜 Army History
-          </h3>
+motto:"Service Before Self",
 
-          <p className="mt-4">
-            Evolution of the Indian Army from
-            Independence to present day.
-          </p>
-        </Link>
+description:
+"The Indian Army is the land-based branch of the Indian Armed Forces dedicated to safeguarding the nation's sovereignty and integrity.",
 
-        <Link
-          to="/army-commands"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            🪖 Commands
-          </h3>
+stats:[
 
-          <p className="mt-4">
-            All Army Commands and their Headquarters.
-          </p>
-        </Link>
+{icon:"🎖️",value:"17",label:"Ranks"},
 
-        <Link
-          to="/army-regiments"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            🎖 Regiments
-          </h3>
+{icon:"⚔️",value:"13",label:"Corps"},
 
-          <p className="mt-4">
-            Infantry, Armoured and Artillery Regiments.
-          </p>
-        </Link>
+{icon:"🏅",value:"27+",label:"Regiments"},
 
-        <Link
-          to="/army-corps"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            ⚔ Corps
-          </h3>
+{icon:"🛡️",value:"12L+",label:"Personnel"}
 
-          <p className="mt-4">
-            Signals, Engineers, ASC, AMC and more.
-          </p>
-        </Link>
+],
 
-        <Link
-          to="/parasf"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            🔥 Para SF
-          </h3>
+primaryAction:{
+label:"Explore Ranks"
+},
 
-          <p className="mt-4">
-            Indian Army Special Forces.
-          </p>
-        </Link>
-
-        <Link
-          to="/army-weapons"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            🚀 Weapons
-          </h3>
-
-          <p className="mt-4">
-            Tanks, Artillery, Rifles and Missiles.
-          </p>
-        </Link>
-
-        <Link
-          to="/army-chiefs"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            ⭐ Army Chiefs
-          </h3>
-
-          <p className="mt-4">
-            Chiefs of Army Staff through history.
-          </p>
-        </Link>
-
-        <Link
-          to="/pvc"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            🏅 PVC Winners
-          </h3>
-
-          <p className="mt-4">
-            Param Vir Chakra Heroes.
-          </p>
-        </Link>
-
-        <Link
-          to="/army-quiz"
-          className="bg-white p-8 rounded-xl shadow hover:shadow-xl"
-        >
-          <h3 className="text-2xl font-bold">
-            ❓ Army Quiz
-          </h3>
-
-          <p className="mt-4">
-            Test your Army Knowledge.
-          </p>
-        </Link>
-
-      </div>
-
-    </div>
-  );
+secondaryAction:{
+label:"Army History"
 }
+
+};
+
+const stats=[
+
+{
+icon:"🎖️",
+value:"17",
+label:"Ranks"
+},
+
+{
+icon:"⚔️",
+value:"13",
+label:"Corps"
+},
+
+{
+icon:"🏅",
+value:"27+",
+label:"Regiments"
+},
+
+{
+icon:"🪖",
+value:"12L+",
+label:"Personnel"
+},
+
+{
+icon:"🔥",
+value:"75+",
+label:"Operations"
+}
+
+];
+
+const sections=[
+
+{
+emoji:"📜",
+title:"Army History",
+description:"History of the Indian Army from Independence to present.",
+color:"orange"
+},
+
+{
+emoji:"🎖️",
+title:"Rank Structure",
+description:"Learn ranks, insignia and promotions.",
+color:"green"
+},
+
+{
+emoji:"⚔️",
+title:"Commands",
+description:"Operational & Training Commands.",
+color:"red"
+},
+
+{
+emoji:"🏅",
+title:"Gallantry Awards",
+description:"PVC, MVC, VrC and more.",
+color:"yellow"
+},
+
+{
+emoji:"🚀",
+title:"Weapons",
+description:"Modern weapons and equipment.",
+color:"purple"
+},
+
+{
+emoji:"🪖",
+title:"Regiments",
+description:"Famous regiments of the Indian Army.",
+color:"emerald"
+}
+
+];
+
+const quote={
+
+emoji:"🇮🇳",
+
+quote:
+"Safety, Honour and Welfare of your Country come first, always and every time.",
+
+author:"Field Marshal Sam Manekshaw",
+
+designation:"Chief of Army Staff"
+
+};
+
+return(
+
+<MilitaryLandingLayout
+
+theme={theme}
+
+hero={hero}
+
+stats={stats}
+
+sections={sections}
+
+quote={quote}
+
+/>
+
+);
+
+};
 
 export default Army;
