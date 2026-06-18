@@ -1,8 +1,6 @@
 function WarTemplate({
   title,
   image,
-  overview,
-  causes,
   timeline,
   heroes,
   outcome,

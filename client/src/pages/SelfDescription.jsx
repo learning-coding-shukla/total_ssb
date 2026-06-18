@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import SDInstructions from "../components/SDInstructions";
 import SDTimer from "../components/SDTimer";
 import SDTips from "../components/SDTips";
@@ -54,19 +54,7 @@ export default function SelfDescription() {
     return () => window.removeEventListener("beforeunload", handler);
   }, []);
 
-  const text = responses[current];
-  const words = useMemo(
-    () => (text.trim() ? text.trim().split(/\s+/).length : 0),
-    [text],
-  );
-
   const progress = ((current + 1) / sections.length) * 100;
-
-  const update = (value) => {
-    const copy = [...responses];
-    copy[current] = value;
-    setResponses(copy);
-  };
 
   const reset = () => {
     if (!window.confirm("Reset all responses?")) return;

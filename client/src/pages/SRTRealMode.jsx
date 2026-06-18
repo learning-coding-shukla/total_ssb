@@ -11,14 +11,6 @@ function SRTRealMode() {
   const [timeLeft, setTimeLeft] = useState(1800); // 30 mins
   const [responses, setResponses] = useState({});
 
-  if (!situations) {
-    return (
-      <div className="min-h-screen flex justify-center items-center text-xl">
-        Invalid SRT Set
-      </div>
-    );
-  }
-
   // Submit Test
   const handleSubmit = () => {
     const attempted = Object.values(responses).filter(
@@ -129,6 +121,14 @@ function SRTRealMode() {
   const attempted = Object.values(responses).filter(
     (r) => r.trim() !== "",
   ).length;
+
+  if (!situations) {
+    return (
+      <div className="min-h-screen flex justify-center items-center text-xl">
+        Invalid SRT Set
+      </div>
+    );
+  }
 
   return (
     <div className="p-8 max-w-6xl mx-auto">

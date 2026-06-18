@@ -749,13 +749,9 @@ function ArmyQuiz() {
   };
 
   const nextQuestion = () => {
-    let correct = false;
-
     if (
       selected === questions[currentQuestion].answer
     ) {
-      correct = true;
-
       setTotalScore((prev) => prev + 1);
       setSessionScore((prev) => prev + 1);
     }

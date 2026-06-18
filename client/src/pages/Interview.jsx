@@ -105,6 +105,7 @@ function Interview() {
         "Learn how to introduce yourself confidently before the Interviewing Officer.",
 
       color: "yellow",
+      link: "/SelfIntroduction",
     },
 
     {
@@ -115,6 +116,7 @@ function Interview() {
         "Understand every section of the Personal Information Questionnaire and how to answer it.",
 
       color: "blue",
+      link: "/piq",
     },
 
     {
@@ -125,17 +127,18 @@ function Interview() {
         "Frequently asked personality and situation-based interview questions.",
 
       color: "purple",
+      link: "/PsychologyQuestions",
     },
 
-    {
-      emoji: "📰",
-      title: "Current Affairs",
+    // {
+    //   emoji: "📰",
+    //   title: "Current Affairs",
 
-      description:
-        "Important defence and national issues every aspirant should know before the interview.",
+    //   description:
+    //     "Important defence and national issues every aspirant should know before the interview.",
 
-      color: "orange",
-    },
+    //   color: "orange",
+    // },
 
     {
       emoji: "⭐",
@@ -145,6 +148,7 @@ function Interview() {
         "Learn how Interviewing Officers assess OLQs during the personal interview.",
 
       color: "emerald",
+      link: "/olqs",
     },
   ];
 

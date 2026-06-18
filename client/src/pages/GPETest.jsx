@@ -39,7 +39,7 @@ if (prev <= 1) {
 return () => clearInterval(timer);
 
 
-}, [phase, navigate]);
+}, [phase, navigate, setId]);
 
 const minutes = Math.floor(timeLeft / 60);
 const seconds = timeLeft % 60;
@@ -51,6 +51,14 @@ phase === "reading"
 
 const progress =
 (timeLeft / maxTime) * 100;
+
+if (!gpe) {
+  return (
+    <div className="min-h-screen flex justify-center items-center text-xl">
+      Invalid GPE Set
+    </div>
+  );
+}
 
 return ( <div className="max-w-7xl mx-auto px-4 py-6">
 

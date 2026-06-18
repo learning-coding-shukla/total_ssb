@@ -1,3 +1,5 @@
+import { Link, useParams } from "react-router-dom";
+
 function WATResult() {
   const { setId } = useParams();
 

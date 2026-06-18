@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const questions = [
   // Analogies (Words & Numbers)
@@ -550,8 +550,15 @@ const questions = [
 ];
 
 function OIR() {
+  const [showScore, setShowScore] = useState(false);
   const [current, setCurrent] = useState(0);
   const [timeLeft, setTimeLeft] = useState(1800);
+  const [score, setScore] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [shuffledQuestions] = useState(
+    () => [...questions].sort(() => Math.random() - 0.5),
+  );
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -566,41 +573,34 @@ function OIR() {
 
     return () => clearInterval(timer);
   }, []);
-  const [score, setScore] = useState(0);
-  <div className="text-red-600 font-bold text-xl">
-    Time Left:
-    {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, "0")}
-  </div>;
-  const shuffledQuestions = [...questions].sort(() => Math.random() - 0.5);
 
-  let grade = "";
+  useEffect(() => {
+    localStorage.setItem("bestOIR", String(score));
+  }, [score]);
 
-  if (score >= 90) grade = "OIR-I";
-  else if (score >= 75) grade = "OIR-II";
-  else if (score >= 60) grade = "OIR-III";
-  else if (score >= 45) grade = "OIR-IV";
-  else grade = "Needs Improvement";
-  <p>Estimated OIR Grade: {grade}</p>;
-  localStorage.setItem("bestOIR", score);
-
-  
-  const [showScore, setShowScore] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const currentQuestion = shuffledQuestions[current];
+  const grade =
+    score >= 90
+      ? "OIR-I"
+      : score >= 75
+      ? "OIR-II"
+      : score >= 60
+      ? "OIR-III"
+      : score >= 45
+      ? "OIR-IV"
+      : "Needs Improvement";
 
   const handleAnswerOptionClick = (option) => {
     setSelectedOption(option);
-
-    // Optional: Auto-advance after selecting, or require "Next" button
-    // Here we just mark the selection to give feedback if needed.
   };
 
   const handleNext = () => {
-    if (selectedOption === questions[current].answer) {
-      setScore(score + 1);
+    if (selectedOption === currentQuestion.answer) {
+      setScore((prev) => prev + 1);
     }
 
     const nextQuestion = current + 1;
-    if (nextQuestion < questions.length) {
+    if (nextQuestion < shuffledQuestions.length) {
       setCurrent(nextQuestion);
       setSelectedOption(null);
     } else {
@@ -615,6 +615,13 @@ function OIR() {
     setSelectedOption(null);
   };
 
+  const minutes = Math.floor(timeLeft / 60);
+  const seconds = String(timeLeft % 60).padStart(2, "0");
+
+  if (!currentQuestion) {
+    return null;
+  }
+
   return (
     <div className="max-w-5xl mx-auto p-10 font-sans">
       <h1 className="text-4xl md:text-5xl font-bold mb-8 text-center text-blue-800">
@@ -622,13 +629,18 @@ function OIR() {
       </h1>
 
       <div className="bg-slate-50 p-6 md:p-10 rounded-xl shadow-lg">
+        <div className="flex justify-between items-center mb-6">
+          <div className="text-red-600 font-bold text-xl">
+            Time Left: {minutes}:{seconds}
+          </div>
+          <p className="text-sm text-slate-500">Estimated OIR Grade: {grade}</p>
+        </div>
+
         {showScore ? (
           <div className="text-center">
             <h2 className="text-3xl font-bold mb-4">Test Completed!</h2>
             <p className="text-2xl mb-8">
-              Your Score:{" "}
-              <span className="text-blue-600 font-bold">{score}</span> /{" "}
-              {questions.length}
+              Your Score: <span className="text-blue-600 font-bold">{score}</span> / {shuffledQuestions.length}
             </p>
             <button
               onClick={resetTest}
@@ -643,17 +655,17 @@ function OIR() {
               <h2 className="text-2xl font-bold text-slate-800">
                 Question {current + 1}{" "}
                 <span className="text-lg font-normal text-slate-500">
-                  / {questions.length}
+                  / {shuffledQuestions.length}
                 </span>
               </h2>
             </div>
 
             <p className="mt-4 text-xl font-medium text-slate-700 min-h-[60px]">
-              {questions[current].question}
+              {currentQuestion.question}
             </p>
 
             <div className="mt-8 space-y-3">
-              {questions[current].options.map((option) => (
+              {currentQuestion.options.map((option) => (
                 <button
                   key={option}
                   onClick={() => handleAnswerOptionClick(option)}
@@ -680,7 +692,7 @@ function OIR() {
                       : "bg-slate-300 text-slate-500 cursor-not-allowed"
                   }`}
               >
-                {current === questions.length - 1 ? "Finish" : "Next"}
+                {current === shuffledQuestions.length - 1 ? "Finish" : "Next"}
               </button>
             </div>
           </>

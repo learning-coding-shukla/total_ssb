@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const MilitaryCard = ({
@@ -5,26 +6,33 @@ const MilitaryCard = ({
   emoji,
   title,
   description,
-  onClick,
   color = "yellow",
+  link,
+  onClick,
 }) => {
   const colorMap = {
-    green: "from-green-500/20 to-green-900/10 border-green-500/30 hover:border-green-400",
-    blue: "from-blue-500/20 to-blue-900/10 border-blue-500/30 hover:border-blue-400",
-    sky: "from-sky-500/20 to-sky-900/10 border-sky-500/30 hover:border-sky-400",
-    yellow: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 hover:border-yellow-400",
-    orange: "from-orange-500/20 to-orange-900/10 border-orange-500/30 hover:border-orange-400",
-    red: "from-red-500/20 to-red-900/10 border-red-500/30 hover:border-red-400",
-    purple: "from-purple-500/20 to-purple-900/10 border-purple-500/30 hover:border-purple-400",
-    emerald: "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 hover:border-emerald-400",
+    green:
+      "from-green-500/20 to-green-900/10 border-green-500/30 hover:border-green-400",
+    blue:
+      "from-blue-500/20 to-blue-900/10 border-blue-500/30 hover:border-blue-400",
+    sky:
+      "from-sky-500/20 to-sky-900/10 border-sky-500/30 hover:border-sky-400",
+    yellow:
+      "from-yellow-500/20 to-yellow-900/10 border-yellow-500/30 hover:border-yellow-400",
+    orange:
+      "from-orange-500/20 to-orange-900/10 border-orange-500/30 hover:border-orange-400",
+    red:
+      "from-red-500/20 to-red-900/10 border-red-500/30 hover:border-red-400",
+    purple:
+      "from-purple-500/20 to-purple-900/10 border-purple-500/30 hover:border-purple-400",
+    emerald:
+      "from-emerald-500/20 to-emerald-900/10 border-emerald-500/30 hover:border-emerald-400",
   };
 
-  return (
+  const CardContent = (
     <div
-      onClick={onClick}
       className={`
         group
-        cursor-pointer
         relative
         overflow-hidden
         rounded-3xl
@@ -45,7 +53,6 @@ const MilitaryCard = ({
       </div>
 
       <div className="relative p-8">
-
         {/* Emoji */}
         <div
           className="
@@ -67,54 +74,21 @@ const MilitaryCard = ({
         </div>
 
         {/* Title */}
-        <h3
-          className="
-            text-2xl
-            font-bold
-            text-white
-            mb-4
-          "
-        >
+        <h3 className="text-2xl font-bold text-white mb-4">
           {title}
         </h3>
 
         {/* Divider */}
-        <div
-          className="
-            w-16
-            h-1
-            rounded-full
-            bg-yellow-400
-            mb-5
-          "
-        />
+        <div className="w-16 h-1 rounded-full bg-yellow-400 mb-5" />
 
         {/* Description */}
-        <p
-          className="
-            text-slate-300
-            leading-8
-            min-h-[110px]
-          "
-        >
+        <p className="text-slate-300 leading-8 min-h-[110px]">
           {description}
         </p>
 
         {/* Footer */}
-        <div
-          className="
-            mt-8
-            flex
-            items-center
-            justify-between
-          "
-        >
-          <span
-            className={`
-              font-semibold
-              ${theme.stat}
-            `}
-          >
+        <div className="mt-8 flex items-center justify-between">
+          <span className={`font-semibold ${theme.stat}`}>
             Explore Module
           </span>
 
@@ -128,8 +102,26 @@ const MilitaryCard = ({
             "
           />
         </div>
-
       </div>
+    </div>
+  );
+
+  // If a link is provided, navigate using React Router
+  if (link) {
+    return (
+      <Link to={link} className="block">
+        {CardContent}
+      </Link>
+    );
+  }
+
+  // Otherwise behave like a clickable card
+  return (
+    <div
+      onClick={onClick}
+      className="cursor-pointer"
+    >
+      {CardContent}
     </div>
   );
 };

@@ -72,12 +72,18 @@ import SelfDescription from "./pages/SelfDescription";
 import ArmyRankStructure from "./pages/ArmyRankStructure";
 import NavyRankStructure from "./pages/NavyRankStructure";
 import AirForceRankStructure from "./pages/AirForceRankStructure";
+import SelfIntroduction from "./pages/SelfIntroduction";
+import PsychologyQuestions from "./pages/PsychologyQuestions";
+import PIQ from "./pages/PIQ";
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
 
       <Routes>
+        <Route path="/piq" element={<PIQ />} />
+        <Route path="/PsychologyQuestions" element={<PsychologyQuestions />} />
+        <Route path="/SelfIntroduction" element={<SelfIntroduction />} />
         <Route path="/army/ranks" element={<ArmyRankStructure />} />
 
         <Route path="/navy/ranks" element={<NavyRankStructure />} />

@@ -9,21 +9,13 @@ function WATTest() {
   const { setId } = useParams();
   const navigate = useNavigate();
 
-  const words = watSets[`set${setId}`];
+  const words = watSets[`set${setId}`] || [];
 
   const [currentWord, setCurrentWord] = useState(0);
   const [timer, setTimer] = useState(15);
   const [isPaused, setIsPaused] = useState(false);
 
   const audioRef = useRef(new Audio(beep));
-
-  if (!words) {
-    return (
-      <div className="min-h-screen flex justify-center items-center text-xl">
-        Invalid WAT Set
-      </div>
-    );
-  }
 
   // Enter Fullscreen
   useEffect(() => {
@@ -77,29 +69,40 @@ function WATTest() {
   useEffect(() => {
     if (timer !== 0) return;
 
-    audioRef.current.currentTime = 0;
-    audioRef.current.play().catch(() => {});
+    const timeoutId = window.setTimeout(() => {
+      audioRef.current.currentTime = 0;
+      audioRef.current.play().catch(() => {});
 
-    if (currentWord < words.length - 1) {
-      setCurrentWord((prev) => prev + 1);
-      setTimer(15);
-    } else {
-      // Save Progress
-      localStorage.setItem(
-        `wat_set_${setId}`,
-        JSON.stringify({
-          completed: true,
-          completedAt: new Date().toISOString(),
-        }),
-      );
+      if (currentWord < words.length - 1) {
+        setCurrentWord((prev) => prev + 1);
+        setTimer(15);
+      } else {
+        localStorage.setItem(
+          `wat_set_${setId}`,
+          JSON.stringify({
+            completed: true,
+            completedAt: new Date().toISOString(),
+          }),
+        );
 
-      if (document.fullscreenElement) {
-        document.exitFullscreen?.();
+        if (document.fullscreenElement) {
+          document.exitFullscreen?.();
+        }
+
+        navigate(`/wat/result/${setId}`);
       }
+    }, 0);
 
-      navigate(`/wat/result/${setId}`);
-    }
-  }, [timer, currentWord, words.length, navigate, setId]);
+    return () => window.clearTimeout(timeoutId);
+  }, [currentWord, navigate, setId, timer, words.length]);
+
+  if (!words.length) {
+    return (
+      <div className="min-h-screen flex justify-center items-center text-xl">
+        Invalid WAT Set
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-6">

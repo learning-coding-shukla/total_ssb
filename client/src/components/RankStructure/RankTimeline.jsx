@@ -1,4 +1,4 @@
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 
 const themeMap = {
   army: {

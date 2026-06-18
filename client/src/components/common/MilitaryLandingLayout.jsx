@@ -17,7 +17,6 @@ const MilitaryLandingLayout = ({
 }) => {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-
       {/* ================= HERO ================= */}
 
       <MilitaryHero
@@ -32,15 +31,11 @@ const MilitaryLandingLayout = ({
 
       {/* ================= STATS ================= */}
 
-      <MilitaryStats
-        theme={theme}
-        stats={stats}
-      />
+      <MilitaryStats theme={theme} stats={stats} />
 
       {/* ================= EXPLORE ================= */}
 
       <section className="max-w-7xl mx-auto px-6 py-20">
-
         <MilitarySection
           theme={theme}
           emoji="⚔️"
@@ -58,7 +53,6 @@ const MilitaryLandingLayout = ({
           "
         >
           {sections.map((item) => (
-
             <MilitaryCard
               key={item.title}
               theme={theme}
@@ -66,12 +60,11 @@ const MilitaryLandingLayout = ({
               title={item.title}
               description={item.description}
               color={item.color}
+              link={item.link}
               onClick={item.onClick}
             />
-
           ))}
         </div>
-
       </section>
 
       {/* ================= QUOTE ================= */}
@@ -83,7 +76,6 @@ const MilitaryLandingLayout = ({
         designation={quote.designation}
         emoji={quote.emoji}
       />
-
     </main>
   );
 };

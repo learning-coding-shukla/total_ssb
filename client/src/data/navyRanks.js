@@ -36,7 +36,6 @@ import pettyOfficerImg from "../assets/images/navy/sailors/petty-officer.png";
 import leadingSeamanImg from "../assets/images/navy/sailors/leading-seaman.png";
 import seaman1Img from "../assets/images/navy/sailors/seaman-1.png";
 import seaman2Img from "../assets/images/navy/sailors/seaman-2.png";
-import { image } from "framer-motion/client";
 
 const commissioned = [
 

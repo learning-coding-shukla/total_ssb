@@ -1,13 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { tatSets } from "../data/tatSets";
 import alarmSound from "../assets/alarm.mp3";
-import { useNavigate } from "react-router-dom";
 
 function TAT() {
   const { setId } = useParams();
 
-  const tatImages = tatSets[`set${setId}`];
+  const tatImages = tatSets[`set${setId}`] || [];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showImage, setShowImage] = useState(true);
@@ -17,13 +16,6 @@ function TAT() {
   const alarmRef = useRef(new Audio(alarmSound));
   const navigate = useNavigate();
 
-  if (!tatImages) {
-    return (
-      <div className="min-h-screen flex justify-center items-center text-2xl font-bold">
-        Invalid TAT Set
-      </div>
-    );
-  }
 
   // Fullscreen
   useEffect(() => {
@@ -60,7 +52,7 @@ function TAT() {
     };
   }, []);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     if (currentIndex < tatImages.length - 1) {
       setCurrentIndex((prev) => prev + 1);
       setShowImage(true);
@@ -80,7 +72,7 @@ function TAT() {
 
       navigate(`/tat/result/${setId}`);
     }
-  };
+  }, [currentIndex, navigate, setId, tatImages.length]);
 
   // Timer
   useEffect(() => {
@@ -111,12 +103,19 @@ function TAT() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [showImage, currentIndex, isPaused]);
+  }, [currentIndex, isPaused, nextImage, showImage]);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
 
   const isBlankSlide = tatImages[currentIndex] === null;
+  if (tatImages.length === 0) {
+  return (
+    <div className="min-h-screen flex items-center justify-center text-3xl font-bold">
+      Invalid TAT Set
+    </div>
+  );
+}
 
   return (
     <div className="max-w-5xl mx-auto p-10">

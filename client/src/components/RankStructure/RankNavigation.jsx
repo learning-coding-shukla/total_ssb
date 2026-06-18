@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   FaUserTie,
@@ -55,61 +55,64 @@ const RankNavigation = ({
 
   const currentTheme = colors[theme];
 
-  const navigationItems = [
-    {
-      id: "officers",
-      label: `Officers (${officers})`,
-      icon: <FaUserTie />,
-    },
+  const navigationItems = useMemo(
+    () => [
+      {
+        id: "officers",
+        label: `Officers (${officers})`,
+        icon: <FaUserTie />,
+      },
 
-    {
-      id: "jco",
-      label: `JCO (${jco})`,
-      icon: <BsFillPeopleFill />,
-    },
+      {
+        id: "jco",
+        label: `JCO (${jco})`,
+        icon: <BsFillPeopleFill />,
+      },
 
-    {
-      id: "other",
-      label: `Other (${other})`,
-      icon: <GiRank3 />,
-    },
+      {
+        id: "other",
+        label: `Other (${other})`,
+        icon: <GiRank3 />,
+      },
 
-    {
-      id: "timeline",
-      label: "Timeline",
-      icon: <GiProgression />,
-    },
+      {
+        id: "timeline",
+        label: "Timeline",
+        icon: <GiProgression />,
+      },
 
-    {
-      id: "appointments",
-      label: "Appointments",
-      icon: <BsFillPeopleFill />,
-    },
+      {
+        id: "appointments",
+        label: "Appointments",
+        icon: <BsFillPeopleFill />,
+      },
 
-    {
-      id: "comparison",
-      label: "Comparison",
-      icon: <MdCompareArrows />,
-    },
+      {
+        id: "comparison",
+        label: "Comparison",
+        icon: <MdCompareArrows />,
+      },
 
-    {
-      id: "facts",
-      label: "Facts",
-      icon: <FaLightbulb />,
-    },
+      {
+        id: "facts",
+        label: "Facts",
+        icon: <FaLightbulb />,
+      },
 
-    {
-      id: "quiz",
-      label: "Quiz",
-      icon: <MdQuiz />,
-    },
+      {
+        id: "quiz",
+        label: "Quiz",
+        icon: <MdQuiz />,
+      },
 
-    {
-      id: "faq",
-      label: "FAQ",
-      icon: <FaQuestionCircle />,
-    },
-  ];
+      {
+        id: "faq",
+        label: "FAQ",
+        icon: <FaQuestionCircle />,
+      },
+    ],
+    [jco, officers, other],
+  );
 
   useEffect(() => {
 
@@ -178,7 +181,7 @@ const RankNavigation = ({
 
     return () => observer.disconnect();
 
-  }, []);
+  }, [navigationItems]);
 
   const scrollToSection = (id) => {
 

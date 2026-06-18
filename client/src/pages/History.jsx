@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 function History() {
   return (
     <div className="max-w-6xl mx-auto p-10">

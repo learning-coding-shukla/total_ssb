@@ -9,13 +9,12 @@ function SRTResult() {
   const total = location.state?.total || 60;
 
   const percentage = Math.round((attempted / total) * 100);
-  let feedback = "";
-
-  if (attempted >= 55)
-    feedback = "Excellent speed. Very close to SSB standards.";
-  else if (attempted >= 45)
-    feedback = "Good performance. Continue improving writing speed.";
-  else feedback = "Focus on quicker decision-making and concise responses.";
+  const feedback =
+    attempted >= 55
+      ? "Excellent speed. Very close to SSB standards."
+      : attempted >= 45
+      ? "Good performance. Continue improving writing speed."
+      : "Focus on quicker decision-making and concise responses.";
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-slate-100">

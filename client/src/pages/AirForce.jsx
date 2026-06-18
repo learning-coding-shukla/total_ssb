@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import MilitaryLandingLayout from "../components/common/MilitaryLandingLayout";
 import militaryThemes from "../components/common/MilitaryTheme";
 
@@ -7,7 +6,9 @@ const theme = militaryThemes.airforce;
 const AirForce = () => {
   const hero = {
     title: "Indian Air Force",
+
     motto: "Touch the Sky with Glory",
+
     description:
       "The Indian Air Force protects the nation's skies through air superiority, strategic airlift, reconnaissance and precision strike capabilities. Explore aircraft, commands, ranks and operations.",
 
@@ -20,10 +21,12 @@ const AirForce = () => {
 
     primaryAction: {
       label: "Explore Ranks",
+      link: "/airforce/ranks",
     },
 
     secondaryAction: {
-      label: "Air Force History",
+      label: "Air Commands",
+      link: "/airforce-commands",
     },
   };
 
@@ -56,49 +59,67 @@ const AirForce = () => {
   ];
 
   const sections = [
-    {
-      emoji: "📜",
-      title: "Air Force History",
-      description: "Explore the history and evolution of the Indian Air Force.",
-      color: "sky",
-    },
+    // {
+    //   emoji: "📜",
+    //   title: "Air Force History",
+    //   description: "Explore the history and evolution of the Indian Air Force.",
+    //   color: "sky",
+    //   link: "#", // Create page later
+    // },
+
     {
       emoji: "✈️",
       title: "Rank Structure",
-      description: "Ranks, insignias, promotions and appointments in the Indian Air Force.",
+      description:
+        "Ranks, insignias, promotions and appointments in the Indian Air Force.",
       color: "blue",
+      link: "/airforce/ranks",
     },
+
     {
       emoji: "🛩️",
       title: "Aircraft Fleet",
-      description: "Fighter aircraft, transport aircraft and trainers of the IAF.",
+      description:
+        "Fighter aircraft, transport aircraft and trainers of the IAF.",
       color: "purple",
+      link: "/aircraft",
     },
+
     {
       emoji: "🚁",
-      title: "Helicopters",
-      description: "Attack, utility and heavy-lift helicopters used by the IAF.",
+      title: "Garud Special Forces",
+      description:
+        "Learn about the elite Garud Commando Force of the Indian Air Force.",
       color: "green",
+      link: "/garud",
     },
-    {
-      emoji: "🚀",
-      title: "Missiles & Defence",
-      description: "Integrated air defence systems and missile capabilities.",
-      color: "red",
-    },
+
+    // {
+    //   emoji: "🚀",
+    //   title: "Missiles & Air Defence",
+    //   description:
+    //     "Integrated air defence systems and missile capabilities.",
+    //   color: "red",
+    //   link: "#", // Create page later
+    // },
+
     {
       emoji: "🌍",
       title: "Air Commands",
-      description: "Operational and maintenance commands across India.",
+      description:
+        "Operational and maintenance commands across India.",
       color: "yellow",
+      link: "/airforce-commands",
     },
   ];
 
   const quote = {
     emoji: "✈️",
-    quote:
-      "Touch the Sky with Glory.",
+
+    quote: "Touch the Sky with Glory.",
+
     author: "Indian Air Force",
+
     designation: "Official Motto",
   };
 

@@ -79,7 +79,11 @@ function PPDT() {
       phase === "observation" &&
       observationTime === 0
     ) {
-      setPhase("character");
+      const timeoutId = setTimeout(() => {
+        setPhase("character");
+      }, 0);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [phase, observationTime, isPaused]);
 
@@ -102,7 +106,11 @@ function PPDT() {
       phase === "character" &&
       characterTime === 0
     ) {
-      setPhase("story");
+      const timeoutId = setTimeout(() => {
+        setPhase("story");
+      }, 0);
+
+      return () => clearTimeout(timeoutId);
     }
   }, [phase, characterTime, isPaused]);
 
