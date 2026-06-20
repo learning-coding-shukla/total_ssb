@@ -2,315 +2,1368 @@ import { Link } from "react-router-dom";
 import armyImg from "../assets/army-logo.png";
 import navyImg from "../assets/navy-logo.png";
 import airforceImg from "../assets/airforce-logo.png";
+import bgImage from "../assets/bg.png";
+
 function Home() {
   return (
-    <div>
+    <div className="bg-slate-50">
+
+      {/* ================= HERO SECTION ================= */}
+
       <section
-        className="
-min-h-[75vh]
-md:min-h-screen
-flex
-items-center
-justify-center
-text-white
-bg-cover
-bg-center
-"
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/hero/hero-bg.jpg')",
-          backgroundPosition: " 65% center",
+          backgroundImage: `linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)), url(${bgImage})`,
+          backgroundPosition: "center",
         }}
       >
-        <div className="text-center px-4 max-w-5xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">total_ssb</h1>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-slate-950"></div>
 
-          <p className="text-base md:text-xl mb-4">
-            One Platform For Complete SSB Preparation
-          </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
 
-          <p className="text-sm md:text-lg mb-8">
-            India's Free Defence & SSB Preparation Platform
-          </p>
+          {/* Badge */}
 
-          <Link
-            to="/psychology"
-            className="inline-block bg-green-600 hover:bg-green-700 px-8 py-4 rounded-xl text-lg font-semibold"
-          >
-            Start Preparation
-          </Link>
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-yellow-500/30 backdrop-blur-md px-5 py-2 rounded-full mb-8">
 
-          {/* Hero Stats */}
+            <span className="text-yellow-400">★</span>
 
-          <div className="grid grid-cols-3 gap-2 md:gap-6 gap-6 mt-12 text-center">
-            <div>
-              <h2 className="text-2xl md:text-4xl font-bold">100+</h2>
-              <p>Topics</p>
-            </div>
+            <span className="tracking-wide text-sm font-medium">
+              India's Free Defence Learning Platform
+            </span>
 
-            <div>
-              <h2 className="text-2xl md:text-4xl font-bold">500+</h2>
-              <p>Questions</p>
-            </div>
-
-            <div>
-              <h2 className="text-2xl md:text-4xl font-bold">24×7</h2>
-              <p>Learning</p>
-            </div>
           </div>
+
+          {/* Main Heading */}
+
+          <h1 className="text-5xl md:text-7xl font-black uppercase tracking-widest leading-tight">
+
+            TOTAL
+
+            <span className="block text-yellow-400">
+              SSB
+            </span>
+
+          </h1>
+
+          <p className="mt-8 text-2xl md:text-4xl font-bold leading-relaxed">
+
+            Become The Officer
+            <br />
+
+            <span className="text-green-400">
+              India Needs.
+            </span>
+
+          </p>
+
+          <p className="mt-8 max-w-3xl mx-auto text-gray-300 text-lg md:text-xl leading-8">
+
+            Practice real SSB Psychology Tests, prepare for Group Tasks,
+            improve your Defence Knowledge, master Lecturette,
+            Current Affairs and Officer Like Qualities —
+            all at one place.
+
+          </p>
+
+          {/* CTA Buttons */}
+
+          <div className="mt-12 flex flex-wrap justify-center gap-5">
+
+            <Link
+              to="/psychology"
+              className="px-10 py-4 rounded-xl bg-green-600 hover:bg-green-700 transition text-lg font-bold shadow-lg"
+            >
+              🚀 Start Preparation
+            </Link>
+
+            <Link
+              to="/knowledge"
+              className="px-10 py-4 rounded-xl border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black transition text-lg font-bold"
+            >
+              📚 Defence Knowledge
+            </Link>
+
+          </div>
+
+          {/* Feature Badges */}
+
+          <div className="mt-14 flex flex-wrap justify-center gap-4">
+
+            {[
+              "Army",
+              "Navy",
+              "Air Force",
+              "Psychology",
+              "Interview",
+              "Lecturette",
+              "Current Affairs",
+              "GTO",
+            ].map((item) => (
+
+              <span
+                key={item}
+                className="bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2 rounded-full text-sm"
+              >
+                {item}
+              </span>
+
+            ))}
+
+          </div>
+
+          {/* Hero Statistics */}
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+
+              <h2 className="text-4xl font-black text-yellow-400">
+                100+
+              </h2>
+
+              <p className="mt-2 text-gray-300">
+                Lecturette Topics
+              </p>
+
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+
+              <h2 className="text-4xl font-black text-green-400">
+                1500+
+              </h2>
+
+              <p className="mt-2 text-gray-300">
+                Practice Questions
+              </p>
+
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+
+              <h2 className="text-4xl font-black text-blue-400">
+                10+
+              </h2>
+
+              <p className="mt-2 text-gray-300">
+                Practice Modules
+              </p>
+
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+
+              <h2 className="text-4xl font-black text-red-400">
+                24×7
+              </h2>
+
+              <p className="mt-2 text-gray-300">
+                Free Learning
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* Scroll Indicator */}
+
+          <div className="mt-20 animate-bounce">
+
+            <p className="text-sm tracking-widest text-gray-300">
+
+              SCROLL TO EXPLORE
+
+            </p>
+
+            <div className="text-3xl mt-2">
+
+              ↓
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+            {/* ================= WHY CHOOSE TOTAL SSB ================= */}
+
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="text-center mb-16">
+
+            <span className="text-yellow-600 font-semibold uppercase tracking-widest">
+              WHY CHOOSE US
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-black mt-4 text-slate-900">
+
+              Why Thousands of Aspirants
+              <br />
+              Choose <span className="text-green-600">TOTAL SSB</span>
+
+            </h2>
+
+            <p className="text-gray-600 mt-6 max-w-3xl mx-auto text-lg leading-8">
+
+              TOTAL SSB is built with one mission —
+              to provide every defence aspirant with
+              free, structured and realistic SSB preparation
+              without expensive coaching.
+
+            </p>
+
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+
+            {[
+              {
+                icon: "🎯",
+                title: "Real SSB Experience",
+                desc: "Timed Psychology Tests, PPDT, TAT, WAT, SRT and Lecturette just like the actual SSB.",
+              },
+              {
+                icon: "📚",
+                title: "Complete Defence Knowledge",
+                desc: "Army, Navy, Air Force, Current Affairs, Operations, Wars, Ranks and Military Knowledge.",
+              },
+              {
+                icon: "🆓",
+                title: "100% Free Platform",
+                desc: "No subscriptions. No hidden charges. Learn anytime from anywhere.",
+              },
+              {
+                icon: "📈",
+                title: "Track Your Progress",
+                desc: "Dashboard to monitor completed tests and continuously improve performance.",
+              },
+              {
+                icon: "🧠",
+                title: "Officer Like Qualities",
+                desc: "Develop leadership, communication, psychology and decision-making skills.",
+              },
+              {
+                icon: "🇮🇳",
+                title: "Made for Defence Aspirants",
+                desc: "Designed specifically for NDA, CDS, AFCAT and other SSB candidates.",
+              },
+            ].map((item) => (
+
+              <div
+                key={item.title}
+                className="
+                bg-slate-50
+                rounded-3xl
+                p-8
+                border
+                border-slate-200
+                hover:-translate-y-2
+                hover:shadow-2xl
+                transition-all
+                duration-300
+                "
+              >
+
+                <div className="text-5xl mb-6">
+
+                  {item.icon}
+
+                </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">
+
+                  {item.title}
+
+                </h3>
+
+                <p className="text-gray-600 leading-8">
+
+                  {item.desc}
+
+                </p>
+
+              </div>
+
+            ))}
+
+          </div>
+
         </div>
       </section>
 
-      {/* Statistics */}
 
-      <section className="max-w-6xl mx-auto py-16 px-6">
-        <div className="grid md:grid-cols-4 gap-6">
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <h2 className="text-4xl font-bold text-green-600">1000+</h2>
-            <p>WAT Words</p>
+
+      {/* ================= WEBSITE STATISTICS ================= */}
+
+      <section className="py-24 bg-slate-950 text-white">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <div className="text-center mb-16">
+
+            <span className="uppercase tracking-widest text-yellow-400">
+
+              PLATFORM OVERVIEW
+
+            </span>
+
+            <h2 className="text-5xl font-black mt-4">
+
+              Everything You Need
+              <br />
+              For SSB Preparation
+
+            </h2>
+
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <h2 className="text-4xl font-bold text-blue-600">300+</h2>
-            <p>SRT Situations</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            {[
+              {
+                number: "1000+",
+                title: "WAT Words",
+                color: "text-green-400",
+              },
+              {
+                number: "300+",
+                title: "SRT Situations",
+                color: "text-blue-400",
+              },
+              {
+                number: "150+",
+                title: "TAT Images",
+                color: "text-red-400",
+              },
+              {
+                number: "50+",
+                title: "PPDT Images",
+                color: "text-yellow-400",
+              },
+              {
+                number: "100+",
+                title: "Lecturette Topics",
+                color: "text-purple-400",
+              },
+              {
+                number: "3",
+                title: "Armed Forces",
+                color: "text-cyan-400",
+              },
+              {
+                number: "10+",
+                title: "Practice Modules",
+                color: "text-pink-400",
+              },
+              {
+                number: "24×7",
+                title: "Free Access",
+                color: "text-orange-400",
+              },
+            ].map((item) => (
+
+              <div
+                key={item.title}
+                className="
+                bg-slate-900
+                rounded-3xl
+                p-8
+                border
+                border-slate-800
+                hover:border-yellow-500
+                hover:scale-105
+                transition-all
+                duration-300
+                text-center
+                "
+              >
+
+                <h2 className={`text-5xl font-black ${item.color}`}>
+
+                  {item.number}
+
+                </h2>
+
+                <p className="mt-4 text-gray-300 text-lg">
+
+                  {item.title}
+
+                </p>
+
+              </div>
+
+            ))}
+
           </div>
 
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <h2 className="text-4xl font-bold text-red-600">150+</h2>
-            <p>TAT Images</p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow text-center">
-            <h2 className="text-4xl font-bold text-purple-600">50+</h2>
-            <p>PPDT Images</p>
-          </div>
         </div>
+
       </section>
+      {/* ================= PRACTICE MODULES ================= */}
 
-      <section className="max-w-7xl mx-auto py-20 px-6">
-        <h2 className="text-5xl font-bold text-center mb-4">
-          🎯 What You Can Practice
-        </h2>
+<section className="py-24 bg-slate-100">
 
-        <p className="text-center text-gray-500 mb-12">
-          Train every aspect of the SSB selection process.
-        </p>
+  <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "🖼 PPDT",
-              desc: "Picture Perception & Discussion Test",
-            },
-            {
-              title: "📖 TAT",
-              desc: "Thematic Apperception Test",
-            },
-            {
-              title: "⚡ WAT",
-              desc: "Word Association Test",
-            },
-            {
-              title: "📝 SRT",
-              desc: "Situation Reaction Test",
-            },
-            {
-              title: "🗣 GD",
-              desc: "Group Discussion Practice",
-            },
-            {
-              title: "🏅 OLQs",
-              desc: "Officer Like Qualities",
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
+    <div className="text-center mb-16">
+
+      <span className="uppercase tracking-widest text-green-700 font-semibold">
+        PRACTICE MODULES
+      </span>
+
+      <h2 className="text-5xl font-black mt-4 text-slate-900">
+
+        Master Every Stage
+        <br />
+        of the SSB Interview
+
+      </h2>
+
+      <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-600 leading-8">
+
+        Practice every assessment exactly like the actual Service Selection
+        Board. Improve your psychology, communication, reasoning and officer
+        qualities through realistic timed practice.
+
+      </p>
+
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {[
+        {
+          icon: "🖼",
+          title: "PPDT",
+          desc: "Picture Perception & Discussion Test",
+          color: "from-blue-600 to-cyan-500",
+        },
+        {
+          icon: "📖",
+          title: "TAT",
+          desc: "Thematic Apperception Test",
+          color: "from-green-600 to-emerald-500",
+        },
+        {
+          icon: "⚡",
+          title: "WAT",
+          desc: "Word Association Test",
+          color: "from-yellow-500 to-orange-500",
+        },
+        {
+          icon: "📝",
+          title: "SRT",
+          desc: "Situation Reaction Test",
+          color: "from-red-600 to-rose-500",
+        },
+        {
+          icon: "🧠",
+          title: "Self Description",
+          desc: "Know Yourself Better",
+          color: "from-purple-600 to-fuchsia-500",
+        },
+        {
+          icon: "🎯",
+          title: "GPE",
+          desc: "Group Planning Exercise",
+          color: "from-indigo-600 to-blue-500",
+        },
+        {
+          icon: "🗣",
+          title: "Lecturette",
+          desc: "Improve Public Speaking",
+          color: "from-cyan-600 to-sky-500",
+        },
+        {
+          icon: "🤝",
+          title: "Interview",
+          desc: "Personal Interview Questions",
+          color: "from-orange-600 to-yellow-500",
+        },
+        {
+          icon: "🏅",
+          title: "OLQs",
+          desc: "Officer Like Qualities",
+          color: "from-slate-800 to-slate-600",
+        },
+
+      ].map((item) => (
+
+        <div
+          key={item.title}
+          className="
+          bg-white
+          rounded-3xl
+          shadow-lg
+          hover:shadow-2xl
+          hover:-translate-y-2
+          transition-all
+          duration-300
+          overflow-hidden
+          "
+        >
+
+          <div
+            className={`h-2 bg-gradient-to-r ${item.color}`}
+          />
+
+          <div className="p-8">
+
+            <div className="text-5xl mb-5">
+
+              {item.icon}
+
+            </div>
+
+            <h3 className="text-3xl font-bold text-slate-900 mb-4">
+
+              {item.title}
+
+            </h3>
+
+            <p className="text-gray-600 leading-7">
+
+              {item.desc}
+
+            </p>
+
+            <button
               className="
+              mt-8
+              bg-slate-900
+              text-white
+              px-6
+              py-3
+              rounded-xl
+              hover:bg-green-600
+              transition
+              "
+            >
+
+              Explore →
+
+            </button>
+
+          </div>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+{/* ================= SSB TIMELINE ================= */}
+
+<section className="py-24 bg-white">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center mb-16">
+
+      <span className="uppercase tracking-widest text-yellow-600 font-semibold">
+
+        SSB PROCESS
+
+      </span>
+
+      <h2 className="text-5xl font-black mt-4 text-slate-900">
+
+        The Journey
+        <br />
+        Towards Becoming an Officer
+
+      </h2>
+
+      <p className="text-lg text-gray-600 mt-6 max-w-3xl mx-auto">
+
+        Understand the complete selection procedure followed by the Services
+        Selection Board.
+
+      </p>
+
+    </div>
+
+    <div className="grid md:grid-cols-5 gap-8">
+
+      {[
+        {
+          no: "01",
+          title: "Screening",
+          desc: "OIR Test & PPDT",
+        },
+        {
+          no: "02",
+          title: "Psychology",
+          desc: "TAT • WAT • SRT • SD",
+        },
+        {
+          no: "03",
+          title: "GTO Tasks",
+          desc: "Outdoor Leadership Tests",
+        },
+        {
+          no: "04",
+          title: "Interview",
+          desc: "Personal Interview",
+        },
+        {
+          no: "05",
+          title: "Conference",
+          desc: "Final Assessment",
+        },
+
+      ].map((step) => (
+
+        <div
+          key={step.no}
+          className="
+          relative
+          bg-slate-900
+          text-white
+          rounded-3xl
+          p-8
+          hover:scale-105
+          hover:bg-green-700
+          transition-all
+          duration-300
+          "
+        >
+
+          <div
+            className="
+            absolute
+            -top-5
+            left-8
+            w-12
+            h-12
+            rounded-full
+            bg-yellow-400
+            text-black
+            flex
+            items-center
+            justify-center
+            font-black
+            text-xl
+            "
+          >
+
+            {step.no}
+
+          </div>
+
+          <div className="mt-8">
+
+            <h3 className="text-2xl font-bold mb-4">
+
+              {step.title}
+
+            </h3>
+
+            <p className="text-gray-300">
+
+              {step.desc}
+
+            </p>
+
+          </div>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+{/* ================= INDIAN ARMED FORCES ================= */}
+
+<section className="py-24 bg-slate-950 text-white">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center mb-16">
+
+      <span className="uppercase tracking-widest text-yellow-400 font-semibold">
+        INDIAN ARMED FORCES
+      </span>
+
+      <h2 className="text-5xl font-black mt-4">
+
+        Explore the Pride
+        <br />
+        of Our Nation
+
+      </h2>
+
+      <p className="max-w-3xl mx-auto mt-6 text-gray-400 text-lg leading-8">
+
+        Learn about the Indian Army, Navy and Air Force —
+        their history, commands, special forces, operations,
+        weapons, aircraft, ships and career opportunities.
+
+      </p>
+
+    </div>
+
+    <div className="grid lg:grid-cols-3 gap-10">
+
+      {/* ================= ARMY ================= */}
+
+      <Link
+        to="/army"
+        className="
+        group
         bg-gradient-to-br
         from-slate-900
         via-slate-800
         to-slate-900
-        text-white
-        rounded-2xl
-        p-8
+        rounded-3xl
+        overflow-hidden
         border
-        border-yellow-500/20
-        hover:scale-105
-        hover:shadow-yellow-500/20
+        border-green-500/30
+        hover:border-green-400
+        hover:-translate-y-3
+        hover:shadow-2xl
         transition-all
+        duration-300
         "
-            >
-              <h3 className="text-3xl font-bold mb-3">{item.title}</h3>
-
-              <p className="text-slate-300">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Defence Services */}
-
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-5xl font-bold text-center mb-4">
-          Indian Armed Forces
-        </h2>
-
-        <p className="text-center text-gray-600 mb-12">
-          Explore the Army, Navy and Air Force in depth.
-        </p>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Army */}
-
-          <Link
-            to="/army"
-            className="
-bg-gradient-to-br
-from-slate-900
-via-slate-800
-to-slate-900
-text-white
-rounded-2xl
-shadow-xl
-p-8
-border
-border-yellow-500/20
-hover:scale-105
-transition-all
-"
-          >
-            <div className="flex flex-col items-center mb-6">
-              <img
-                src={armyImg}
-                alt="Indian Army"
-                className="h-24 w-24 object-contain mb-3"
-              />
-
-              <h3 className="text-3xl font-bold">Indian Army</h3>
-              <p className="text-green-700 font-semibold mt-2">
-                Service Before Self
-              </p>
-            </div>
-
-            <ul className="space-y-2 text-gray-300">
-              <li>✓ Commands</li>
-              <li>✓ Regiments</li>
-              <li>✓ Para SF</li>
-              <li>✓ Weapons</li>
-              <li>✓ Operations</li>
-            </ul>
-
-            <div className="mt-6 text-green-600 font-bold">Explore →</div>
-          </Link>
-
-          {/* Navy */}
-
-          <Link
-            to="/navy"
-            className="
-bg-gradient-to-br
-from-slate-900
-via-slate-800
-to-slate-900
-text-white
-rounded-2xl
-shadow-xl
-p-8
-border
-border-yellow-500/20
-hover:scale-105
-transition-all
-"
-          >
-            <div className="flex flex-col items-center mb-6">
-              <img
-                src={navyImg}
-                alt="Indian Navy"
-                className="h-24 w-24 object-contain mb-3"
-              />
-
-              <h3 className="text-3xl font-bold">Indian Navy</h3>
-              <p className="text-blue-700 font-semibold mt-2">Shanno Varunah</p>
-            </div>
-
-            <ul className="space-y-2 text-gray-300">
-              <li>✓ Commands</li>
-              <li>✓ Fleets</li>
-              <li>✓ MARCOS</li>
-              <li>✓ Ships</li>
-              <li>✓ Operations</li>
-            </ul>
-
-            <div className="mt-6 text-blue-600 font-bold">Explore →</div>
-          </Link>
-
-          {/* Air Force */}
-
-          <Link
-            to="/airforce"
-            className="
-bg-gradient-to-br
-from-slate-900
-via-slate-800
-to-slate-900
-text-white
-rounded-2xl
-shadow-xl
-p-8
-border
-border-yellow-500/20
-hover:scale-105
-transition-all
-"
-          >
-            <div className="flex flex-col items-center mb-6">
-              <img
-                src={airforceImg}
-                alt="Indian Air Force"
-                className="h-24 w-24 object-contain mb-3"
-              />
-
-              <h3 className="text-3xl font-bold">Indian Air Force</h3>
-              <p className="text-red-700 font-semibold mt-2">
-                Touch The Sky With Glory
-              </p>
-            </div>
-
-            <ul className="space-y-2 text-gray-300">
-              <li>✓ Commands</li>
-              <li>✓ Aircraft</li>
-              <li>✓ Missiles</li>
-              <li>✓ Air Defence</li>
-              <li>✓ Operations</li>
-            </ul>
-
-            <div className="mt-6 text-red-600 font-bold">Explore →</div>
-          </Link>
-        </div>
-      </section>
-      <section
-        className="
-  py-20
-  bg-gradient-to-r
-  from-yellow-500
-  via-amber-400
-  to-yellow-500
-  text-black
-  text-center
-  "
       >
-        <h2 className="text-5xl font-bold mb-6">🇮🇳 Officer's Creed</h2>
 
-        <p className="max-w-4xl mx-auto text-xl leading-9">
-          The SSB does not seek perfection. It seeks potential.
-          <br />
-          <br />
-          Build your character. Strengthen your mind. Lead with integrity. Serve
-          with honour.
-        </p>
-      </section>
+        <div className="h-2 bg-green-500"></div>
+
+        <div className="p-10">
+
+          <div className="flex justify-center">
+
+            <img
+              src={armyImg}
+              alt="Indian Army"
+              className="h-28 object-contain group-hover:scale-110 transition"
+            />
+
+          </div>
+
+          <h3 className="text-3xl font-black mt-8 text-center">
+
+            Indian Army
+
+          </h3>
+
+          <p className="text-center text-green-400 font-semibold mt-2">
+
+            Service Before Self
+
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-8 text-center">
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-green-400 font-bold">7</h4>
+
+              <p className="text-sm text-gray-400">
+                Commands
+              </p>
+
+            </div>
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-green-400 font-bold">
+
+                13 Lakh+
+
+              </h4>
+
+              <p className="text-sm text-gray-400">
+                Personnel
+              </p>
+
+            </div>
+
+          </div>
+
+          <ul className="space-y-3 mt-8 text-gray-300">
+
+            <li>✔ Commands</li>
+
+            <li>✔ Regiments</li>
+
+            <li>✔ Para SF</li>
+
+            <li>✔ Weapons</li>
+
+            <li>✔ Operations</li>
+
+            <li>✔ Rank Structure</li>
+
+          </ul>
+
+          <button
+            className="
+            mt-10
+            w-full
+            bg-green-600
+            py-4
+            rounded-xl
+            font-bold
+            hover:bg-green-700
+            transition
+            "
+          >
+
+            Explore Army →
+
+          </button>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* ================= NAVY ================= */}
+
+      <Link
+        to="/navy"
+        className="
+        group
+        bg-gradient-to-br
+        from-slate-900
+        via-slate-800
+        to-slate-900
+        rounded-3xl
+        overflow-hidden
+        border
+        border-blue-500/30
+        hover:border-blue-400
+        hover:-translate-y-3
+        hover:shadow-2xl
+        transition-all
+        duration-300
+        "
+      >
+
+        <div className="h-2 bg-blue-500"></div>
+
+        <div className="p-10">
+
+          <div className="flex justify-center">
+
+            <img
+              src={navyImg}
+              alt="Indian Navy"
+              className="h-28 object-contain group-hover:scale-110 transition"
+            />
+
+          </div>
+
+          <h3 className="text-3xl font-black mt-8 text-center">
+
+            Indian Navy
+
+          </h3>
+
+          <p className="text-center text-blue-400 font-semibold mt-2">
+
+            Shanno Varunah
+
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-8 text-center">
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-blue-400 font-bold">3</h4>
+
+              <p className="text-sm text-gray-400">
+                Commands
+              </p>
+
+            </div>
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-blue-400 font-bold">
+
+                75,000+
+
+              </h4>
+
+              <p className="text-sm text-gray-400">
+                Personnel
+              </p>
+
+            </div>
+
+          </div>
+
+          <ul className="space-y-3 mt-8 text-gray-300">
+
+            <li>✔ Fleets</li>
+
+            <li>✔ Aircraft Carriers</li>
+
+            <li>✔ MARCOS</li>
+
+            <li>✔ Submarines</li>
+
+            <li>✔ Operations</li>
+
+            <li>✔ Rank Structure</li>
+
+          </ul>
+
+          <button
+            className="
+            mt-10
+            w-full
+            bg-blue-600
+            py-4
+            rounded-xl
+            font-bold
+            hover:bg-blue-700
+            transition
+            "
+          >
+
+            Explore Navy →
+
+          </button>
+
+        </div>
+
+      </Link>
+
+
+
+      {/* ================= AIR FORCE ================= */}
+
+      <Link
+        to="/airforce"
+        className="
+        group
+        bg-gradient-to-br
+        from-slate-900
+        via-slate-800
+        to-slate-900
+        rounded-3xl
+        overflow-hidden
+        border
+        border-red-500/30
+        hover:border-red-400
+        hover:-translate-y-3
+        hover:shadow-2xl
+        transition-all
+        duration-300
+        "
+      >
+
+        <div className="h-2 bg-red-500"></div>
+
+        <div className="p-10">
+
+          <div className="flex justify-center">
+
+            <img
+              src={airforceImg}
+              alt="Indian Air Force"
+              className="h-28 object-contain group-hover:scale-110 transition"
+            />
+
+          </div>
+
+          <h3 className="text-3xl font-black mt-8 text-center">
+
+            Indian Air Force
+
+          </h3>
+
+          <p className="text-center text-red-400 font-semibold mt-2">
+
+            Touch The Sky With Glory
+
+          </p>
+
+          <div className="grid grid-cols-2 gap-4 mt-8 text-center">
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-red-400 font-bold">7</h4>
+
+              <p className="text-sm text-gray-400">
+                Commands
+              </p>
+
+            </div>
+
+            <div className="bg-slate-800 rounded-xl p-4">
+
+              <h4 className="text-red-400 font-bold">
+
+                1.4 Lakh+
+
+              </h4>
+
+              <p className="text-sm text-gray-400">
+                Personnel
+              </p>
+
+            </div>
+
+          </div>
+
+          <ul className="space-y-3 mt-8 text-gray-300">
+
+            <li>✔ Aircraft</li>
+
+            <li>✔ Missiles</li>
+
+            <li>✔ Air Defence</li>
+
+            <li>✔ Commands</li>
+
+            <li>✔ Operations</li>
+
+            <li>✔ Rank Structure</li>
+
+          </ul>
+
+          <button
+            className="
+            mt-10
+            w-full
+            bg-red-600
+            py-4
+            rounded-xl
+            font-bold
+            hover:bg-red-700
+            transition
+            "
+          >
+
+            Explore Air Force →
+
+          </button>
+
+        </div>
+
+      </Link>
+
     </div>
-  );
+
+  </div>
+
+</section>
+{/* ================= TESTIMONIALS ================= */}
+
+<section className="py-24 bg-white">
+
+  <div className="max-w-7xl mx-auto px-6">
+
+    <div className="text-center mb-16">
+
+      <span className="uppercase tracking-widest text-green-600 font-semibold">
+        WHAT ASPIRANTS SAY
+      </span>
+
+      <h2 className="text-5xl font-black mt-4 text-slate-900">
+
+        Built for Defence Aspirants,
+        <br />
+        Trusted by Learners
+
+      </h2>
+
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+
+      {[
+        {
+          name: "NDA Aspirant",
+          text: "The psychology tests feel very close to the real SSB. The timers and interface are excellent.",
+        },
+        {
+          name: "CDS Candidate",
+          text: "Finally a free platform where I can prepare Lecturette, WAT, TAT and Defence Knowledge together.",
+        },
+        {
+          name: "AFCAT Aspirant",
+          text: "Simple, modern and easy to use. The Armed Forces section is my favourite.",
+        },
+      ].map((item) => (
+
+        <div
+          key={item.name}
+          className="bg-slate-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+        >
+
+          <div className="text-yellow-500 text-2xl">
+
+            ⭐⭐⭐⭐⭐
+
+          </div>
+
+          <p className="mt-6 text-gray-600 leading-8 italic">
+
+            "{item.text}"
+
+          </p>
+
+          <h4 className="mt-8 font-bold text-slate-900">
+
+            — {item.name}
+
+          </h4>
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+{/* ================= OFFICER'S CREED ================= */}
+
+<section
+className="
+py-24
+bg-gradient-to-r
+from-green-700
+via-green-600
+to-green-700
+text-white
+text-center
+"
+>
+
+<div className="max-w-5xl mx-auto px-6">
+
+<h2 className="text-5xl font-black mb-8">
+
+🇮🇳 OFFICER'S CREED
+
+</h2>
+
+<p className="text-2xl leading-10 font-light">
+
+"The Services Selection Board does not seek perfection.
+
+It seeks individuals with the potential to lead,
+
+the courage to take responsibility,
+
+the character to inspire others,
+
+and the integrity to serve the Nation."
+
+</p>
+
+<div className="mt-12 text-yellow-300 text-xl font-bold">
+
+Lead with Character • Think with Clarity • Serve with Honour
+
+</div>
+
+</div>
+
+</section>
+
+
+
+{/* ================= CALL TO ACTION ================= */}
+
+<section className="py-20 bg-slate-950 text-white">
+
+<div className="max-w-6xl mx-auto px-6 text-center">
+
+<h2 className="text-5xl font-black">
+
+Ready to Begin Your SSB Journey?
+
+</h2>
+
+<p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+
+Join thousands of defence aspirants preparing for NDA, CDS, AFCAT and SSB interviews through realistic practice modules.
+
+</p>
+
+<div className="mt-12 flex flex-wrap justify-center gap-6">
+
+<Link
+to="/psychology"
+className="bg-green-600 hover:bg-green-700 px-10 py-4 rounded-xl font-bold text-lg transition"
+>
+
+Start Preparation 🚀
+
+</Link>
+
+<Link
+to="/knowledge"
+className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-10 py-4 rounded-xl font-bold text-lg transition"
+>
+
+Explore Defence 📚
+
+</Link>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+{/* ================= FOOTER ================= */}
+
+<footer className="bg-black text-gray-400">
+
+<div className="max-w-7xl mx-auto px-6 py-16">
+
+<div className="grid md:grid-cols-4 gap-10">
+
+<div>
+
+<h3 className="text-3xl font-black text-white">
+
+TOTAL SSB
+
+</h3>
+
+<p className="mt-5 leading-8">
+
+India's Free Defence & SSB Preparation Platform.
+
+Helping every defence aspirant become an officer.
+
+</p>
+
+</div>
+
+<div>
+
+<h4 className="text-xl font-bold text-white mb-5">
+
+Practice
+
+</h4>
+
+<ul className="space-y-3">
+
+<li>PPDT</li>
+
+<li>TAT</li>
+
+<li>WAT</li>
+
+<li>SRT</li>
+
+<li>Lecturette</li>
+
+<li>Interview</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 className="text-xl font-bold text-white mb-5">
+
+Defence
+
+</h4>
+
+<ul className="space-y-3">
+
+<li>Indian Army</li>
+
+<li>Indian Navy</li>
+
+<li>Indian Air Force</li>
+
+<li>Military Operations</li>
+
+<li>Current Affairs</li>
+
+<li>History</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4 className="text-xl font-bold text-white mb-5">
+
+Quick Links
+
+</h4>
+
+<ul className="space-y-3">
+
+<li>Dashboard</li>
+
+<li>Knowledge Hub</li>
+
+<li>Psychology</li>
+
+<li>Contact</li>
+
+<li>Privacy Policy</li>
+
+<li>About</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div className="border-t border-gray-800 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center">
+
+<p>
+
+© 2026 TOTAL SSB. All Rights Reserved.
+
+</p>
+
+<p className="mt-4 md:mt-0">
+
+Made with ❤️ for Defence Aspirants 🇮🇳
+
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+</div>
+
+);
+
 }
 
 export default Home;
