@@ -401,34 +401,27 @@ function Home() {
         </div>
 
       </section>
-      {/* ================= PRACTICE MODULES ================= */}
+    {/* ================= PRACTICE MODULES ================= */}
 
 <section className="py-24 bg-slate-100">
-
   <div className="max-w-7xl mx-auto px-6">
 
     <div className="text-center mb-16">
-
       <span className="uppercase tracking-widest text-green-700 font-semibold">
         PRACTICE MODULES
       </span>
 
       <h2 className="text-5xl font-black mt-4 text-slate-900">
-
         Master Every Stage
         <br />
         of the SSB Interview
-
       </h2>
 
       <p className="max-w-3xl mx-auto mt-6 text-lg text-gray-600 leading-8">
-
         Practice every assessment exactly like the actual Service Selection
         Board. Improve your psychology, communication, reasoning and officer
         qualities through realistic timed practice.
-
       </p>
-
     </div>
 
     <div className="grid md:grid-cols-3 gap-8">
@@ -439,61 +432,72 @@ function Home() {
           title: "PPDT",
           desc: "Picture Perception & Discussion Test",
           color: "from-blue-600 to-cyan-500",
+          link: "/ppdt",
         },
         {
           icon: "📖",
           title: "TAT",
           desc: "Thematic Apperception Test",
           color: "from-green-600 to-emerald-500",
+          link: "/tat",
         },
         {
           icon: "⚡",
           title: "WAT",
           desc: "Word Association Test",
           color: "from-yellow-500 to-orange-500",
+          link: "/wat",
         },
         {
           icon: "📝",
           title: "SRT",
           desc: "Situation Reaction Test",
           color: "from-red-600 to-rose-500",
+          link: "/srt",
         },
         {
           icon: "🧠",
           title: "Self Description",
           desc: "Know Yourself Better",
           color: "from-purple-600 to-fuchsia-500",
+          link: "/self-description",
         },
         {
           icon: "🎯",
           title: "GPE",
           desc: "Group Planning Exercise",
           color: "from-indigo-600 to-blue-500",
+          link: "/gpe",
         },
         {
           icon: "🗣",
           title: "Lecturette",
           desc: "Improve Public Speaking",
           color: "from-cyan-600 to-sky-500",
+          link: "/lecturette",
         },
         {
           icon: "🤝",
           title: "Interview",
           desc: "Personal Interview Questions",
           color: "from-orange-600 to-yellow-500",
+          link: "/interview",
         },
         {
           icon: "🏅",
           title: "OLQs",
           desc: "Officer Like Qualities",
           color: "from-slate-800 to-slate-600",
+          link: "/olqs",
         },
-
       ].map((item) => (
 
-        <div
+        <Link
           key={item.title}
+          to={item.link}
           className="
+          group
+          block
           bg-white
           rounded-3xl
           shadow-lg
@@ -505,63 +509,48 @@ function Home() {
           "
         >
 
-          <div
-            className={`h-2 bg-gradient-to-r ${item.color}`}
-          />
+          <div className={`h-2 bg-gradient-to-r ${item.color}`} />
 
           <div className="p-8">
 
             <div className="text-5xl mb-5">
-
               {item.icon}
-
             </div>
 
             <h3 className="text-3xl font-bold text-slate-900 mb-4">
-
               {item.title}
-
             </h3>
 
             <p className="text-gray-600 leading-7">
-
               {item.desc}
-
             </p>
 
-            <button
-              className="
-              mt-8
-              bg-slate-900
-              text-white
-              px-6
-              py-3
-              rounded-xl
-              hover:bg-green-600
-              transition
-              "
-            >
+            <div className="flex justify-end mt-8">
 
-              Explore →
+              <span
+                className="
+                text-green-600
+                font-bold
+                group-hover:translate-x-2
+                transition-transform
+                duration-300
+                "
+              >
+                Explore →
+              </span>
 
-            </button>
+            </div>
 
           </div>
 
-        </div>
+        </Link>
 
       ))}
 
     </div>
 
   </div>
-
 </section>
-
-
-
-
-
 {/* ================= SSB TIMELINE ================= */}
 
 <section className="py-24 bg-white">
@@ -1236,127 +1225,180 @@ Explore Defence 📚
 
 {/* ================= FOOTER ================= */}
 
+{/* ================= FOOTER ================= */}
+
 <footer className="bg-black text-gray-400">
 
-<div className="max-w-7xl mx-auto px-6 py-16">
+  <div className="max-w-7xl mx-auto px-6 py-16">
 
-<div className="grid md:grid-cols-4 gap-10">
+    <div className="grid md:grid-cols-4 gap-10">
 
-<div>
+      {/* Brand */}
 
-<h3 className="text-3xl font-black text-white">
+      <div>
 
-TOTAL SSB
+        <h3 className="text-3xl font-black text-white">
+          TOTAL SSB
+        </h3>
 
-</h3>
+        <p className="mt-5 leading-8">
+          India's Free Defence & SSB Preparation Platform.
+          <br />
+          Helping every defence aspirant become an officer.
+        </p>
 
-<p className="mt-5 leading-8">
+      </div>
 
-India's Free Defence & SSB Preparation Platform.
+      {/* Practice */}
 
-Helping every defence aspirant become an officer.
+      <div>
 
-</p>
+        <h4 className="text-xl font-bold text-white mb-5">
+          Practice
+        </h4>
 
-</div>
+        <ul className="space-y-3">
 
-<div>
+          <li>
+            <Link to="/ppdt" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              PPDT
+            </Link>
+          </li>
 
-<h4 className="text-xl font-bold text-white mb-5">
+          <li>
+            <Link to="/tat" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              TAT
+            </Link>
+          </li>
 
-Practice
+          <li>
+            <Link to="/wat" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              WAT
+            </Link>
+          </li>
 
-</h4>
+          <li>
+            <Link to="/srt" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              SRT
+            </Link>
+          </li>
 
-<ul className="space-y-3">
+          <li>
+            <Link to="/lecturette" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Lecturette
+            </Link>
+          </li>
 
-<li>PPDT</li>
+          <li>
+            <Link to="/interview" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Interview
+            </Link>
+          </li>
 
-<li>TAT</li>
+        </ul>
 
-<li>WAT</li>
+      </div>
 
-<li>SRT</li>
+      {/* Defence */}
 
-<li>Lecturette</li>
+      <div>
 
-<li>Interview</li>
+        <h4 className="text-xl font-bold text-white mb-5">
+          Defence
+        </h4>
 
-</ul>
+        <ul className="space-y-3">
 
-</div>
+          <li>
+            <Link to="/army" className="hover:text-yellow-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Indian Army
+            </Link>
+          </li>
 
-<div>
+          <li>
+            <Link to="/navy" className="hover:text-blue-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Indian Navy
+            </Link>
+          </li>
 
-<h4 className="text-xl font-bold text-white mb-5">
+          <li>
+            <Link to="/airforce" className="hover:text-red-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Indian Air Force
+            </Link>
+          </li>
 
-Defence
+          <li>
+            <Link to="/operations" className="hover:text-orange-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Military Operations
+            </Link>
+          </li>
 
-</h4>
+          <li>
+            <Link to="/knowledge" className="hover:text-cyan-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Current Affairs
+            </Link>
+          </li>
 
-<ul className="space-y-3">
+          <li>
+            <Link to="/history" className="hover:text-purple-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              History
+            </Link>
+          </li>
 
-<li>Indian Army</li>
+        </ul>
 
-<li>Indian Navy</li>
+      </div>
 
-<li>Indian Air Force</li>
+      {/* Quick Links */}
 
-<li>Military Operations</li>
+      <div>
 
-<li>Current Affairs</li>
+        <h4 className="text-xl font-bold text-white mb-5">
+          Quick Links
+        </h4>
 
-<li>History</li>
+        <ul className="space-y-3">
 
-</ul>
+          <li>
+            <Link to="/dashboard" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Dashboard
+            </Link>
+          </li>
 
-</div>
+          <li>
+            <Link to="/knowledge" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Knowledge Hub
+            </Link>
+          </li>
 
-<div>
+          <li>
+            <Link to="/psychology" className="hover:text-green-400 hover:translate-x-2 transition-all duration-300 inline-block">
+              Psychology
+            </Link>
+          </li>
 
-<h4 className="text-xl font-bold text-white mb-5">
 
-Quick Links
+        </ul>
 
-</h4>
+      </div>
 
-<ul className="space-y-3">
+    </div>
 
-<li>Dashboard</li>
+    {/* Bottom */}
 
-<li>Knowledge Hub</li>
+    <div className="border-t border-gray-800 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center">
 
-<li>Psychology</li>
+      <p>
+        © 2026 <span className="font-bold text-white">TOTAL SSB</span>. All Rights Reserved.
+      </p>
 
-<li>Contact</li>
+      <p className="mt-4 md:mt-0 text-center">
+        Made with <span className="text-red-500">❤️</span> for Defence Aspirants 🇮🇳
+      </p>
 
-<li>Privacy Policy</li>
+    </div>
 
-<li>About</li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div className="border-t border-gray-800 mt-14 pt-8 flex flex-col md:flex-row justify-between items-center">
-
-<p>
-
-© 2026 TOTAL SSB. All Rights Reserved.
-
-</p>
-
-<p className="mt-4 md:mt-0">
-
-Made with ❤️ for Defence Aspirants 🇮🇳
-
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </footer>
 
